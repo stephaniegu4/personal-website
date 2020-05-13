@@ -1,3 +1,8 @@
+html, body, #root, #root>div {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +15,26 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.headerText {
+  font-family: 'JostRegular';
+  font-size: 7vw;
+  text-align: center;
+}
+
+.subtitleText {
+  font-family: 'JostLight';
+  font-size: 4vw;
+  text-align: center;
+}
+
+@font-face {
+  font-family:'JostRegular';
+  src: local('JostRegular'), url("./fonts/Jost-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family:'JostLight';
+    src: local('JostLight'), url("./fonts/Jost-Light.ttf") format('truetype');
 }

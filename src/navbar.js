@@ -26,10 +26,11 @@ class NavBar extends React.Component {
 
     render() {
         var containerStyle = {
-            width: '80%',
+            width: '90%',
             display:'block',
             marginLeft:'auto',
             marginRight:'auto',
+            height:'auto',
         }
 
         var navItemStyle = {
@@ -37,7 +38,7 @@ class NavBar extends React.Component {
         }
 
         var navBrandStyle = {
-            color:'#eba7d0'
+            color: "#f7a38f"
         }
 
         var navStyle = {
