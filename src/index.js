@@ -12,7 +12,7 @@ ReactDOM.render(
   <Router>
     <NavBar/>
     <Switch>
-      <Route to="/" component={Home} exact/>
+      <Route path="/" component={Home} exact/>
     </Switch>
   </Router>,
   document.getElementById('root')

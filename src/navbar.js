@@ -9,6 +9,14 @@ import {
     Nav 
 } from 'reactstrap';
 
+const navItems = [
+    { title: "About", link: "/about" }, 
+    { title: "Experience", link: "/experience" }, 
+    { title: "Gallery", link: "/gallery" }, 
+    { title: "Contact", link: "/contact" },
+    { title: "Resume", link: "/resumepdf" } // Add resume pdf as link
+]
+
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
@@ -47,24 +55,13 @@ class NavBar extends React.Component {
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
-                            <NavItem style={navItemStyle}>
-                                <NavLink href="/">About</NavLink>
-                            </NavItem>
-                            <NavItem style={navItemStyle}>
-                                <NavLink href="/">Gallery</NavLink>
-                            </NavItem>
-                            <NavItem style={navItemStyle}>
-                                <NavLink href="/">Experience</NavLink>
-                            </NavItem>
-                            <NavItem style={navItemStyle}>
-                                <NavLink href="/">Goals</NavLink>
-                            </NavItem>
-                            <NavItem style={navItemStyle}>
-                                <NavLink href="/">Contact</NavLink>
-                            </NavItem>
-                            <NavItem style={navItemStyle}>
-                                <NavLink href="/">Resume</NavLink>
-                            </NavItem>
+                            {navItems.map(item => {
+                                return(
+                                    <NavItem style={navItemStyle}>
+                                        <NavLink href={item.link}>{item.title}</NavLink>
+                                    </NavItem>
+                                );
+                            })}
                         </Nav>
                     </Collapse>
                 </Navbar>
