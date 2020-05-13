@@ -29,6 +29,13 @@ code {
   text-align: center;
 }
 
+.bodyText {
+  font-family: 'JostLight';
+  font-size: 20px;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
 @font-face {
   font-family:'JostRegular';
   src: local('JostRegular'), url("./fonts/Jost-Regular.ttf") format('truetype');

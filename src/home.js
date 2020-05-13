@@ -6,6 +6,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#f7a38f", "#9ed5e6", "#b49ee6"];
+const containerStyle = {
+    height: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+}
 
 class HeaderText extends React.Component {
     constructor(props) {
@@ -29,15 +35,6 @@ class HeaderText extends React.Component {
     }
 
     render() {
-
-        var containerStyle = {
-            height: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: '-8vh',
-        }
-
         var expandIconStyle = {
             width:'60px',
             height:'60px',
@@ -78,11 +75,56 @@ class HeaderText extends React.Component {
     }
 }
 
+class Profile extends React.Component {
+    render() {
+        var backgroundStyle = {
+            background: '#22222e'
+        }
+
+        var imgStyle = {
+            width:'100%',
+            height:'auto'
+        }
+
+        var verticalCenter = {
+            display:'flex',
+            alignItems:'center'
+        }
+
+        var bodyStyle = {
+            color: 'white', 
+            paddingTop: '20px', 
+            paddingBottom: '20px'
+        }
+
+        return(
+            <div style={{...containerStyle, ...backgroundStyle}}>
+                <Container fluid>
+                    <Row>
+                        <Col md={{size:4, offset:1}}><img style={imgStyle} src={require('./images/profile.jpg')} /></Col>
+                        <Col md="6" style={verticalCenter}>
+                            <p className="bodyText" style={bodyStyle}>
+                                Hey! I'm a second year student at the University of Waterloo currently pursuing a degree in computer science. 
+                                I'm always actively looking for internships and opportunities to leave the nest and explore a new city!
+                                <br/><br/>
+                                Favourite activities include: eating, petting the dogs, re-bingeing Brooklyn 99, splurging on online shopping.
+                                <br/><br/>
+                                Explore a little and feel free to reach out!
+                            </p>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
+}
+
 class Home extends React.Component {
     render() {
         return(
             <div>
                 <HeaderText />
+                <Profile/>
             </div>
         );
     }

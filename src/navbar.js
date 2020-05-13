@@ -26,7 +26,6 @@ class NavBar extends React.Component {
 
     render() {
         var containerStyle = {
-            width: '90%',
             display:'block',
             marginLeft:'auto',
             marginRight:'auto',
@@ -41,13 +40,9 @@ class NavBar extends React.Component {
             color: "#f7a38f"
         }
 
-        var navStyle = {
-            float:'right'
-        }
-
         return(
             <div style={containerStyle}>
-                <Navbar color="faded" light expand="md">
+                <Navbar color="white" light expand="md" fixed="top">
                     <NavbarBrand href="/" style={navBrandStyle}>steph gu</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
