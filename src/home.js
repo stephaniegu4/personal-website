@@ -7,7 +7,6 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#f7a38f", "#9ed5e6", "#b49ee6"];
 const containerStyle = {
-    height: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -35,6 +34,11 @@ class HeaderText extends React.Component {
     }
 
     render() {
+
+        var fullHeight = {
+            height:'100%'
+        }
+
         var expandIconStyle = {
             width:'60px',
             height:'60px',
@@ -44,7 +48,7 @@ class HeaderText extends React.Component {
         }
 
         return (
-            <div style={containerStyle}>
+            <div style={{...fullHeight, ...containerStyle}}>
                 <Container fluid>
                     <Row>
                         <Col md={{ size: 1, offset: 2 }}>
@@ -78,7 +82,10 @@ class HeaderText extends React.Component {
 class Profile extends React.Component {
     render() {
         var backgroundStyle = {
-            background: '#22222e'
+            background: '#22222e',
+            paddingTop:'90px',
+            paddingBottom:'90px'
+            //height:'80%'
         }
 
         var imgStyle = {
