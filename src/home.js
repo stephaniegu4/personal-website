@@ -59,7 +59,7 @@ class HeaderText extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col className="subtitleText">
+                        <Col className="subHeaderText">
                             I'm a <TextTransition 
                                 text={descriptors[this.state.index]} 
                                 style={{ color: colors[this.state.colorIndex] }} 
@@ -68,7 +68,7 @@ class HeaderText extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col md="12" className="subtitleText">Get to know me!</Col>
+                        <Col md="12" className="subHeaderText">Get to know me!</Col>
                     </Row>
                     <Row style={{paddingTop:'3vh'}}>
                         <Col><ExpandMoreIcon style={expandIconStyle} /></Col>
@@ -84,8 +84,9 @@ class Profile extends React.Component {
         var backgroundStyle = {
             background: '#22222e',
             paddingTop:'90px',
-            paddingBottom:'90px'
-            //height:'80%'
+            paddingBottom:'90px',
+            paddingLeft: '5%',
+            paddingRight: '5%'
         }
 
         var imgStyle = {
@@ -126,15 +127,13 @@ class Profile extends React.Component {
     }
 }
 
-class Home extends React.Component {
-    render() {
-        return(
-            <div>
-                <HeaderText />
-                <Profile/>
-            </div>
-        );
-    }
+const Home = () => {
+    return(
+        <div>
+            <HeaderText />
+            <Profile/>
+        </div>
+    );
 }
 
 export default Home;

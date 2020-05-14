@@ -23,16 +23,22 @@ code {
   text-align: center;
 }
 
-.subtitleText {
+.subHeaderText {
   font-family: 'JostLight';
   font-size: 4vw;
   text-align: center;
 }
 
 .bodyText {
-  font-family: 'JostLight';
+  font-family: 'JostRegular';
   font-size: 20px;
-  text-align: left;
+  overflow-wrap: break-word;
+  font-weight: bold;
+}
+
+.subtitleText {
+  font-family: 'JostRegular';
+  font-size: 18px;
   overflow-wrap: break-word;
 }
 

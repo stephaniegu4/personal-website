@@ -10,11 +10,11 @@ import {
 } from 'reactstrap';
 
 const navItems = [
-    { title: "About", link: "/about" }, 
-    { title: "Experience", link: "/experience" }, 
-    { title: "Gallery", link: "/gallery" }, 
-    { title: "Contact", link: "/contact" },
-    { title: "Resume", link: "/resumepdf" } // Add resume pdf as link
+    { title: "About", link: "/about", key: 1 }, 
+    { title: "Experience", link: "/experience", key: 2 }, 
+    { title: "Gallery", link: "/gallery", key: 3 }, 
+    { title: "Contact", link: "/contact", key: 4 },
+    { title: "Resume", link: "/resumepdf", key: 5 } // Add resume pdf as link
 ]
 
 class NavBar extends React.Component {
@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                         <Nav className="ml-auto" navbar>
                             {navItems.map(item => {
                                 return(
-                                    <NavItem style={navItemStyle}>
+                                    <NavItem style={navItemStyle} key={item.key}>
                                         <NavLink href={item.link}>{item.title}</NavLink>
                                     </NavItem>
                                 );
