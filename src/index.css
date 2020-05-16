@@ -42,6 +42,11 @@ code {
   overflow-wrap: break-word;
 }
 
+.verticalCenter {
+  display: flex;
+  align-items: center;
+}
+
 @font-face {
   font-family:'JostRegular';
   src: local('JostRegular'), url("./fonts/Jost-Regular.ttf") format('truetype');

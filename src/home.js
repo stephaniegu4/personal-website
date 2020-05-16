@@ -93,12 +93,7 @@ class Profile extends React.Component {
             width:'100%',
             height:'auto'
         }
-
-        var verticalCenter = {
-            display:'flex',
-            alignItems:'center'
-        }
-
+        
         var bodyStyle = {
             color: 'white', 
             paddingTop: '20px', 
@@ -109,8 +104,8 @@ class Profile extends React.Component {
             <div style={{...containerStyle, ...backgroundStyle}}>
                 <Container fluid>
                     <Row>
-                        <Col md={{size:4, offset:1}}><img style={imgStyle} src={require('./images/profile.jpg')} /></Col>
-                        <Col md="6" style={verticalCenter}>
+                        <Col md="5" ><img style={imgStyle} src={require('./images/profile.jpg')} /></Col>
+                        <Col md="7" className="verticalCenter">
                             <p className="bodyText" style={bodyStyle}>
                                 Hey! I'm a second year student at the University of Waterloo currently pursuing a degree in computer science. 
                                 I'm always actively looking for internships and opportunities to leave the nest and explore a new city!

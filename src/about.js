@@ -6,8 +6,12 @@ import {
     CardDeck,
     CardText, 
     CardBody,
-    CardTitle
+    CardTitle,
+    Container,
+    Row,
+    Col,
 } from 'reactstrap';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const bgColor = "#3a3045"
 const interestItems = [
@@ -74,13 +78,82 @@ const travelItems = [
     }
 ]
 
+class AboutSection extends React.Component {
+    render() {
+        var imgStyle = {
+            width: '100%',
+            height: 'auto'
+        }
+
+        var containerStyle = {
+            paddingTop: '100px',
+            paddingLeft: '10%',
+            paddingRight: '10%'
+        }
+
+        var bodyStyle = {
+            paddingTop: '20px',
+            paddingBottom: '20px'
+        }
+
+        var headerStyle = {
+            fontSize: '50px',
+            overflowWrap: 'break-word'
+        }
+
+        var iconStyle = {
+            height: '40px',
+            width: '40px'
+        }
+
+        return(
+            <div style={containerStyle} >
+                <h1 className="headerText" style={headerStyle} >Me</h1>
+                <Container fluid style={{paddingTop: '20px'}}>
+                    <Row>
+                        <Col md="5"><img style={imgStyle} src={require('./images/sg.jpg')} /></Col>
+                        <Col md="7" className="verticalCenter" style={bodyStyle} >
+                            <Container fluid>
+                                <Row>
+                                    <Col md="12">
+                                        <p className="bodyText">
+                                            Hey there! I'm a student and an aspiring software developer hoping to grow, excel, and make an impact wherever I go!
+                                            I'm always looking for chances to learn new things and meet new people, and I'm actively looking for internship opportunities in Winter 2021 or Summer 2021. 
+                                            <br /><br />
+                                            I'm a creature of habit, so I love an opportunity where I can push myself out of my comfort zone, like when I had to get used to saying "bathroom" instead of "washroom" 
+                                            after living in the States for the first time (Canadian eh?).
+                                            <br /><br />
+                                            If I'm not at home studying or working, you can probably find me pursuing my dream of being an amateur baker. Ask me for my 
+                                            chocolate chip cookies recipe :).
+                                            <br /><br />
+                                            If you like what you see or you just want my cookies recipe, I'd love to connect! You know where to find me.
+                                        </p>
+                                    </Col>
+                                </Row>
+                                <Row style={{paddingTop: '20px'}} >
+                                    <Col md="12" className="subtitleText">Scroll for more me!</Col>
+                                </Row>
+                                <Row>
+                                    <Col md="12">
+                                        <ExpandMoreIcon style={iconStyle} />
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        );
+    }
+}
 class Interests extends React.Component {
     render() {
         var containerStyle = {
             paddingTop:'50px',
             paddingBottom:'100px',
             paddingLeft:'10%',
-            paddingRight:'10%'
+            paddingRight:'10%',
+            width:'100%'
         }
 
         var textStyle = {
@@ -90,8 +163,7 @@ class Interests extends React.Component {
         var headerStyle = {
             fontSize: '45px',
             paddingTop: '100px',
-            overflowWrap: 'break-word',
-            color: bgColor
+            overflowWrap: 'break-word'
         }
 
         var imgStyle = {
@@ -151,7 +223,8 @@ class TravelDoc extends React.Component {
         var containerStyle = {
             paddingLeft: '10%',
             paddingRight: '10%',
-            paddingTop: '20px'
+            paddingTop: '20px',
+            width:'100%'
         }
 
         return(
@@ -185,6 +258,7 @@ class TravelDoc extends React.Component {
 const About = () => {
     return(
         <div>
+            <AboutSection />
             <Interests />
             <TravelDoc />
         </div>
