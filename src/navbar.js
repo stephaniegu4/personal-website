@@ -8,9 +8,11 @@ import {
     NavbarBrand,
     Nav 
 } from 'reactstrap';
+import Scroll from 'react-scroll';
+import { Link } from 'react-scroll';
 
 const navItems = [
-    { title: "About", link: "/about", key: 1 }, 
+    { title: "About", link: "about", key: 1 }, 
     { title: "Experience", link: "/experience", key: 2 }, 
     { title: "Gallery", link: "/gallery", key: 3 }, 
     { title: "Contact", link: "/contact", key: 4 },
@@ -32,6 +34,12 @@ class NavBar extends React.Component {
         })
     }
 
+    scrollToTop = () => {
+        Scroll.animateScroll.scrollTo(0, {
+            duration:200
+        })
+    }
+
     render() {
         var containerStyle = {
             display:'block',
@@ -41,24 +49,30 @@ class NavBar extends React.Component {
         }
 
         var navItemStyle = {
-            paddingLeft:'10px'
+            paddingLeft:'20px',
+            paddingRight: '10px',
+            fontFamily: 'JostRegular',
+            cursor: 'pointer',
+            fontSize: '18px'
         }
 
         var navBrandStyle = {
-            color: "#f7a38f"
+            color: "#f7a38f",
+            paddingLeft: '10px',
+            cursor: 'pointer'
         }
 
         return(
             <div style={containerStyle}>
                 <Navbar color="white" light expand="md" fixed="top">
-                    <NavbarBrand href="/" style={navBrandStyle}>steph gu</NavbarBrand>
+                    <NavbarBrand onClick={this.scrollToTop} style={navBrandStyle}>steph gu</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             {navItems.map(item => {
                                 return(
                                     <NavItem style={navItemStyle} key={item.key}>
-                                        <NavLink href={item.link}>{item.title}</NavLink>
+                                        <Link to={item.link} smooth="true" >{item.title}</Link>
                                     </NavItem>
                                 );
                             })}

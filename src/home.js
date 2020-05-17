@@ -3,6 +3,7 @@ import './index.css';
 import { Container, Row, Col } from 'reactstrap';
 import TextTransition from 'react-text-transition';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { AboutSection } from './about.js';
 
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#f7a38f", "#9ed5e6", "#b49ee6"];
@@ -48,7 +49,7 @@ class HeaderText extends React.Component {
         }
 
         return (
-            <div style={{...fullHeight, ...containerStyle}}>
+            <div id="start" style={{...fullHeight, ...containerStyle}}>
                 <Container fluid>
                     <Row>
                         <Col md={{ size: 1, offset: 2 }}>
@@ -107,12 +108,16 @@ class Profile extends React.Component {
                         <Col md="5" ><img style={imgStyle} src={require('./images/profile.jpg')} /></Col>
                         <Col md="7" className="verticalCenter">
                             <p className="bodyText" style={bodyStyle}>
-                                Hey! I'm a second year student at the University of Waterloo currently pursuing a degree in computer science. 
-                                I'm always actively looking for internships and opportunities to leave the nest and explore a new city!
-                                <br/><br/>
-                                Favourite activities include: eating, petting the dogs, re-bingeing Brooklyn 99, splurging on online shopping.
-                                <br/><br/>
-                                Explore a little and feel free to reach out!
+                                Hey there! I'm a second year student at the University of Waterloo currently pursuing a degree in computer science.
+                                I'm an aspiring software developer hoping to grow, excel, and make an impact wherever I go!
+                                I'm always looking for chances to learn new things and meet new people, and I'm actively looking for internships in Winter 2021 or Summer 2021.
+                                <br /><br />
+                                If I'm not working or playing with the dogs, you can probably find me pursuing my dream of being an amateur baker. Ask me for my
+                                chocolate chip cookies recipe :).
+                                <br /><br />
+                                Hobbies include: eating, online shopping too much, volleyball, re-bingeing Brooklyn 99
+                                <br /><br />
+                                If you like what you see or you just want my cookies recipe, I'd love to connect! You know where to find me.
                             </p>
                         </Col>
                     </Row>
@@ -126,7 +131,7 @@ const Home = () => {
     return(
         <div>
             <HeaderText />
-            <Profile/>
+            <AboutSection />
         </div>
     );
 }
