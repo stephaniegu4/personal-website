@@ -8,6 +8,7 @@ import {
 import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import NotesIcon from '@material-ui/icons/Notes';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 class ContactSection extends React.Component {
     render() {
@@ -82,4 +83,39 @@ class ContactSection extends React.Component {
     }
 }
 
+const ConnectIcons = (props) => {
+
+    var iconStyle = {
+        fill: props.fill,
+        width: '40px',
+        height: '40px'
+    }
+
+    return (
+        <Container>
+            <Row>
+                <Col>
+                    <a href="http://www.github.com/stephaniegu4">
+                        <GitHubIcon style={iconStyle} className="link-icon" />
+                    </a>
+                </Col>
+                <Col>
+                    <a href="mailto: s53gu@uwaterloo.ca">
+                        <EmailIcon style={iconStyle} className="link-icon" />
+                    </a>
+                </Col>
+                <Col>
+                    <a href="http://www.linkedin.com/in/gu-stephanie" >
+                        <LinkedInIcon style={iconStyle} className="link-icon" />
+                    </a>
+                </Col>
+                <Col>
+                    <NotesIcon style={iconStyle} className="link-icon" />
+                </Col>
+            </Row>
+        </Container>
+    );
+}
+
 export default ContactSection;
+export { ConnectIcons };

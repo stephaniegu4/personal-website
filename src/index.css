@@ -47,6 +47,18 @@ code {
   align-items: center;
 }
 
+.link-icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.link-icon:hover {
+  opacity: 0.5
+}
+
 @font-face {
   font-family:'JostRegular';
   src: local('JostRegular'), url("./fonts/Jost-Regular.ttf") format('truetype');

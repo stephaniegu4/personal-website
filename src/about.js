@@ -12,6 +12,7 @@ import {
     Col,
 } from 'reactstrap';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { ConnectIcons } from './contact.js';
 
 const bgColor = "#3a3045"
 const interestItems = [
@@ -115,7 +116,7 @@ class AboutSection extends React.Component {
                 <Container fluid style={{paddingTop: '20px'}}>
                     <Row>
                         <Col md="5"><img style={imgStyle} src={require('./images/sg.jpg')} /></Col>
-                        <Col md="7" className="verticalCenter" style={bodyStyle} >
+                        <Col md="6" className="verticalCenter" style={bodyStyle} >
                             <Container fluid>
                                 <Row>
                                     <Col md="12">
@@ -142,6 +143,9 @@ class AboutSection extends React.Component {
                                     </Col>
                                 </Row>
                             </Container>
+                        </Col>
+                        <Col md="1" >
+                            <ConnectIcons fill="white" />
                         </Col>
                     </Row>
                 </Container>
