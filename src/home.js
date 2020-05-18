@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import TextTransition from 'react-text-transition';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { AboutSection } from './about.js';
+import { ContactForm } from './contact.js';
 
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#f7a38f", "#9ed5e6", "#b49ee6"];
@@ -132,6 +133,7 @@ const Home = () => {
         <div>
             <HeaderText />
             <AboutSection />
+            <ContactForm />
         </div>
     );
 }

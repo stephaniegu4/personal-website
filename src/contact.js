@@ -3,7 +3,13 @@ import './index.css';
 import {
     Container,
     Row,
-    Col
+    Col,
+    Button,
+    Form,
+    FormGroup,
+    Label,
+    Input,
+    FormText
 } from 'reactstrap';
 import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -117,5 +123,64 @@ const ConnectIcons = (props) => {
     );
 }
 
+const ContactForm = () => {
+
+    var containerStyle = {
+        marginLeft: '25%',
+        marginRight: '25%',
+        marginTop: '50px',
+        marginBottom: '50px'
+    }
+
+    var headerText = {
+        fontFamily: 'JostRegular',
+        fontSize: '45px',
+        overflowWrap: 'break-word'
+    }
+
+    var subtitleText = {
+        fontFamily: 'JostLight',
+        color: '#4f4d49'
+    }
+
+    var inputStyle = {
+        borderRadius:'0',
+        border: '0',
+        borderBottom: '1px solid black'
+    }
+
+    var buttonStyle = {
+        borderRadius: '0'
+    }
+
+    return(
+        <div style={containerStyle} >
+            <h1 style={headerText} >CONTACT</h1>
+            <p className="bodyText" style={subtitleText} >Connect with me and leave a message!</p>
+            <Form>
+                <Row form>
+                    <Col md={6} >
+                        <FormGroup>
+                            <Input type="name" name="name" placeholder="Name*" required style={inputStyle} />
+                        </FormGroup>
+                    </Col>
+                    <Col md={6} >
+                        <FormGroup>
+                            <Input type="number" name="number" placeholder="Phone Number" style={inputStyle} />
+                        </FormGroup>
+                    </Col>
+                </Row>
+                <FormGroup>
+                    <Input type="email" name="email" placeholder="Email*" required style={inputStyle} />
+                </FormGroup>
+                <FormGroup>
+                    <Input type="textarea" placeholder="Message" style={inputStyle} />
+                </FormGroup>
+                <Button outline color="secondary" style={buttonStyle} >Submit</Button>
+            </Form>
+        </div>
+    );
+}
+
 export default ContactSection;
-export { ConnectIcons };
+export { ConnectIcons, ContactForm };
