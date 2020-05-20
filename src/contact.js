@@ -7,14 +7,14 @@ import {
     Button,
     Form,
     FormGroup,
-    Label,
     Input,
-    FormText
+    Alert
 } from 'reactstrap';
 import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import NotesIcon from '@material-ui/icons/Notes';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import axios from 'axios';
 
 class ContactSection extends React.Component {
     render() {
@@ -106,7 +106,7 @@ const ConnectIcons = (props) => {
                     </a>
                 </Col>
                 <Col>
-                    <a href="mailto: s53gu@uwaterloo.ca">
+                    <a href="mailto: stephaniegu7h@gmail.com">
                         <EmailIcon style={iconStyle} className="link-icon" />
                     </a>
                 </Col>
@@ -123,63 +123,134 @@ const ConnectIcons = (props) => {
     );
 }
 
-const ContactForm = () => {
+class ContactForm extends React.Component {
+    constructor(props) {
+        super(props)
 
-    var containerStyle = {
-        marginLeft: '25%',
-        marginRight: '25%',
-        marginTop: '50px',
-        marginBottom: '50px'
+        this.state = {
+            name: '',
+            email: '',
+            number: '',
+            message: ''
+        }
     }
 
-    var headerText = {
-        fontFamily: 'JostRegular',
-        fontSize: '45px',
-        overflowWrap: 'break-word'
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
 
-    var subtitleText = {
-        fontFamily: 'JostLight',
-        color: '#4f4d49'
+    handleSubmit(e) {
+        e.preventDefault()
+        console.log(this.state)
+
+        axios({
+            method: "POST",
+            url: "http://localhost:3001",
+            data: this.state
+        }).then((response) => {
+            console.log(response)
+            if (response.data.status === 'success') {
+                alert("Message sent successfully!")
+                this.resetForm()
+            } else if (response.data.status === 'fail') {
+                alert(response.data.message + "\nMessage failed to send.")
+            }
+        })
     }
 
-    var inputStyle = {
-        borderRadius:'0',
-        border: '0',
-        borderBottom: '1px solid black'
+    resetForm = () => {
+        this.setState({
+            name: '',
+            email: '',
+            number: '',
+            message: ''
+        })
     }
 
-    var buttonStyle = {
-        borderRadius: '0'
-    }
+    render() {
+        var containerStyle = {
+            marginLeft: '25%',
+            marginRight: '25%',
+            marginTop: '50px',
+            marginBottom: '50px'
+        }
 
-    return(
-        <div style={containerStyle} >
-            <h1 style={headerText} >CONTACT</h1>
-            <p className="bodyText" style={subtitleText} >Connect with me and leave a message!</p>
-            <Form>
-                <Row form>
-                    <Col md={6} >
-                        <FormGroup>
-                            <Input type="name" name="name" placeholder="Name*" required style={inputStyle} />
-                        </FormGroup>
-                    </Col>
-                    <Col md={6} >
-                        <FormGroup>
-                            <Input type="number" name="number" placeholder="Phone Number" style={inputStyle} />
-                        </FormGroup>
-                    </Col>
-                </Row>
-                <FormGroup>
-                    <Input type="email" name="email" placeholder="Email*" required style={inputStyle} />
-                </FormGroup>
-                <FormGroup>
-                    <Input type="textarea" placeholder="Message" style={inputStyle} />
-                </FormGroup>
-                <Button outline color="secondary" style={buttonStyle} >Submit</Button>
-            </Form>
-        </div>
-    );
+        var headerText = {
+            fontFamily: 'JostRegular',
+            fontSize: '45px',
+            overflowWrap: 'break-word'
+        }
+
+        var subtitleText = {
+            fontFamily: 'JostLight',
+            color: '#4f4d49'
+        }
+
+        var inputStyle = {
+            borderRadius: '0',
+            border: '0',
+            borderBottom: '1px solid black'
+        }
+
+        var buttonStyle = {
+            borderRadius: '0'
+        }
+
+        return (
+            <div style={containerStyle} >
+                <h1 style={headerText} >CONTACT</h1>
+                <p className="bodyText" style={subtitleText} >Connect with me and leave a message!</p>
+                <Form onSubmit={this.handleSubmit.bind(this)}>
+                    <Row form>
+                        <Col md={6} >
+                            <FormGroup>
+                                <Input 
+                                    type="name" 
+                                    name="name" 
+                                    placeholder="Name*" 
+                                    value={this.state.name}
+                                    onChange={this.handleChange} 
+                                    required style={inputStyle} />
+                            </FormGroup>
+                        </Col>
+                        <Col md={6} >
+                            <FormGroup>
+                                <Input 
+                                    type="number" 
+                                    name="number" 
+                                    placeholder="Phone Number" 
+                                    value={this.state.number}
+                                    onChange={this.handleChange} 
+                                    style={inputStyle} />
+                            </FormGroup>
+                        </Col>
+                    </Row>
+                    <FormGroup>
+                        <Input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Email*" 
+                            value={this.state.email}
+                            onChange={this.handleChange} 
+                            required style={inputStyle} />
+                    </FormGroup>
+                    <FormGroup>
+                        <Input 
+                            type="textarea" 
+                            name="message"
+                            placeholder="Message*" 
+                            value={this.state.message}
+                            onChange={this.handleChange} 
+                            required
+                            style={inputStyle} />
+                    </FormGroup>
+                    <Button type="submit" outline color="secondary" style={buttonStyle} >Submit</Button>
+                </Form>
+            </div>
+        );
+    }
 }
 
 export default ContactSection;
