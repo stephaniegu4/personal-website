@@ -9,9 +9,10 @@ import { ContactForm } from './contact.js';
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#f7a38f", "#9ed5e6", "#b49ee6"];
 const containerStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginRight: '5%',
+    marginLeft: '5%',
+    paddingTop: '100px',
+    paddingBottom: '80px',
 }
 
 class HeaderText extends React.Component {
@@ -21,6 +22,7 @@ class HeaderText extends React.Component {
         this.state = {
             index: 0,
             colorIndex: 0,
+            iconWidth: ''
         };
     }
 
@@ -29,51 +31,68 @@ class HeaderText extends React.Component {
             index: this.state.index == descriptors.length - 1 ? 0 : this.state.index + 1,
             colorIndex: this.state.colorIndex == colors.length - 1 ? 0 : this.state.colorIndex + 1,
         }), 2500)
+        this.updateWindowDimensions()
+        window.addEventListener('resize', this.updateWindowDimensions)
     }
 
     componentWillUnmount() {
         clearInterval(this.interval)
+        window.removeEventListener('resize', this.updateWindowDimensions)
+    }
+
+    updateWindowDimensions = () => {
+        var smallWidth = window.innerWidth < 450
+        this.setState({ 
+            iconWidth: smallWidth ? '200px' : '300px'
+        })
     }
 
     render() {
 
-        var fullHeight = {
-            height:'100%'
+        var heightStyle = {
+            height: this.state.heightStyle
         }
 
-        var expandIconStyle = {
-            width:'60px',
-            height:'60px',
-            display:'block',
-            marginLeft:'auto',
-            marginRight:'auto',
+        var iconStyle = {
+            width: this.state.iconWidth,
+            height: 'auto',
+            paddingTop: '10px',
+            paddingBottom: '10px'
+        }
+
+        var colStyle = {
+            paddingTop: '20px',
+            paddingBottom: '20px'
         }
 
         return (
-            <div id="start" style={{...fullHeight, ...containerStyle}}>
-                <Container fluid>
+            <div id="start" style={{ ...heightStyle, ...containerStyle}} className="verticalCenter" >
+                <Container>
                     <Row>
-                        <Col md={{ size: 1, offset: 2 }}>
-                            <h1 className="headerText">Hi!</h1>
+                        <Col md={{ size: 4 }} >
+                            <img src={require('./images/bitmoji.jpg')} style={iconStyle} alt="" />
                         </Col>
-                        <Col md="8">
-                            <h1 className="headerText">I'm Stephanie Gu.</h1>
+                        <Col md="8" className="verticalCenter" style={colStyle} >
+                            <Container fluid >
+                                <Row>
+                                    <Col>
+                                        <h1 className="headerText">Hi! I'm Stephanie Gu.</h1>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col className="subHeaderText">
+                                        I'm a <TextTransition
+                                            text={descriptors[this.state.index]}
+                                            style={{ fontFamily: 'JostRegular', color: colors[this.state.colorIndex] }}
+                                            inline
+                                        />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col md="12" className="subHeaderText" style={{ fontSize: '30px' }}>Get to know me!</Col>
+                                </Row>
+                            </Container>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col className="subHeaderText">
-                            I'm a <TextTransition 
-                                text={descriptors[this.state.index]} 
-                                style={{ color: colors[this.state.colorIndex] }} 
-                                inline
-                            />
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col md="12" className="subHeaderText">Get to know me!</Col>
-                    </Row>
-                    <Row style={{paddingTop:'3vh'}}>
-                        <Col><ExpandMoreIcon style={expandIconStyle} /></Col>
                     </Row>
                 </Container>
             </div>

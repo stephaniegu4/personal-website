@@ -187,7 +187,7 @@ class Interests extends React.Component {
                     {interestItems.map(item => {
                         return (
                             <Card inverse style={{ background: 'white', borderColor: 'white' }} key={item.key} >
-                                <CardImg style={imgStyle} top src={require(`./images/icons/${item.src}`)} />
+                                <CardImg style={imgStyle} top src={require(`./images/icons/${item.src}`)} alt="" />
                                 <CardBody className="text-center">
                                     <CardTitle style={textStyle} className="bodyText" >{item.title}</CardTitle>
                                     <CardText style={textStyle} className="subtitleText" >{item.description}</CardText>
