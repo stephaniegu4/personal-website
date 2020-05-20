@@ -16,79 +16,6 @@ import NotesIcon from '@material-ui/icons/Notes';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import axios from 'axios';
 
-class ContactSection extends React.Component {
-    render() {
-        var headerStyle = {
-            fontSize: '50px',
-            overflowWrap: 'break-word',
-            paddingTop: '100px'
-        }
-
-        var contactStyle = {
-            background: '#22222e',
-            fontSize: '30px',
-            display: 'flex',
-            alignItems: 'center',
-            color: 'white',
-            justifyContent: 'center',
-            paddingTop: '10px',
-            paddingBottom: '10px',
-            overflowWrap: 'break-word'
-        }
-
-        var iconStyle = {
-            width: '70px',
-            height: '70px',
-            display: 'block',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-            marginTop: '10px',
-            marginBottom: '10px'
-        }
-
-        var rowStyle = {
-            marginTop: '30px',
-        }
-
-        var linkStyle = {
-            textDecoration: 'none',
-            color: 'white'
-        }
-
-        return(
-            <div style={{ marginLeft: '10%', marginRight: '10%' }}>
-                <h1 className="headerText" style={headerStyle} >Connect with me!</h1>
-                <Container style={{ paddingTop: '40px' }} >
-                    <Row>
-                        <Col md={{ size: 2, offset: 1 }}>
-                            <NotesIcon style={iconStyle} />
-                        </Col>
-                        <Col md="8" style={contactStyle} className="bodyText" >
-                            Click for my resume! 
-                        </Col>
-                    </Row>
-                    <Row style={rowStyle} >
-                        <Col md={{ size: 2, offset: 1 }}>
-                            <EmailIcon style={iconStyle} />
-                        </Col>
-                        <Col md="8" style={contactStyle} className="bodyText" >
-                            s53gu@uwaterloo.ca
-                        </Col>
-                    </Row>
-                    <Row style={rowStyle} >
-                        <Col md={{ size: 2, offset: 1 }}>
-                            <GitHubIcon style={iconStyle} />
-                        </Col>
-                        <Col md="8" style={contactStyle} className="bodyText" >
-                            <a href="http://www.github.com/stephaniegu4" style={linkStyle} >stephaniegu4</a>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-        );  
-    }
-}
-
 const ConnectIcons = (props) => {
 
     var iconStyle = {
@@ -131,7 +58,10 @@ class ContactForm extends React.Component {
             name: '',
             email: '',
             number: '',
-            message: ''
+            message: '',
+            showAlert: false,
+            alertMessage: '',
+            alertColour: "danger"
         }
     }
 
@@ -152,11 +82,27 @@ class ContactForm extends React.Component {
         }).then((response) => {
             console.log(response)
             if (response.data.status === 'success') {
-                alert("Message sent successfully!")
+                this.setState({
+                    showAlert: true,
+                    alertMessage: 'Message sent successfully!',
+                    alertColour: 'success'
+                })
                 this.resetForm()
             } else if (response.data.status === 'fail') {
-                alert(response.data.message + "\nMessage failed to send.")
+                this.setState({
+                    showAlert: true,
+                    alertMessage: 'Message failed to send.',
+                    alertColour: 'danger'
+                })
             }
+        })
+    }
+
+    onDismiss = () => {
+        this.setState({
+            showAlert: false,
+            alertMessage: '',
+            alertColour: ''
         })
     }
 
@@ -200,6 +146,9 @@ class ContactForm extends React.Component {
 
         return (
             <div style={containerStyle} >
+                <Alert color={this.state.alertColour} isOpen={this.state.showAlert} toggle={this.onDismiss} >
+                    {this.state.alertMessage}
+                </Alert>
                 <h1 style={headerText} >CONTACT</h1>
                 <p className="bodyText" style={subtitleText} >Connect with me and leave a message!</p>
                 <Form onSubmit={this.handleSubmit.bind(this)}>
@@ -253,5 +202,4 @@ class ContactForm extends React.Component {
     }
 }
 
-export default ContactSection;
 export { ConnectIcons, ContactForm };

@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-do
 import NavBar from './navbar.js';
 import Home from './home.js';
 import About from './about.js';
-import ContactSection from './contact.js';
 
 function debounce(value, delay) {
   let timer
@@ -50,7 +49,6 @@ function App() {
       <NavBar />
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/contact" component={ContactSection} />
       </Switch>
     </Router>
   );
