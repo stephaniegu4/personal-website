@@ -124,7 +124,7 @@ class ContactForm extends React.Component {
         }
 
         var headerText = {
-            fontFamily: 'JostRegular',
+            fontFamily: 'JostBold',
             fontSize: '45px',
             overflowWrap: 'break-word'
         }
@@ -145,7 +145,7 @@ class ContactForm extends React.Component {
         }
 
         return (
-            <div style={containerStyle} >
+            <div style={containerStyle} id="contact" >
                 <Alert color={this.state.alertColour} isOpen={this.state.showAlert} toggle={this.onDismiss} >
                     {this.state.alertMessage}
                 </Alert>

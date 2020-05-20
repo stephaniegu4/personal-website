@@ -14,9 +14,9 @@ import { Link } from 'react-scroll';
 const navItems = [
     { title: "About", link: "about", key: 1 }, 
     { title: "Experience", link: "/experience", key: 2 }, 
-    { title: "Gallery", link: "/gallery", key: 3 }, 
-    { title: "Contact", link: "/contact", key: 4 },
-    { title: "Resume", link: "/resumepdf", key: 5 } // Add resume pdf as link
+    { title: "Contact", link: "contact", key: 3 },
+    { title: "Resume", link: "/resumepdf", key: 4 }, // Add resume pdf as link
+    { title: "Gallery", link: "/gallery", key: 5 }
 ]
 
 class NavBar extends React.Component {
@@ -68,7 +68,7 @@ class NavBar extends React.Component {
         return(
             <div style={containerStyle}>
                 <Navbar color="white" light expand="md" fixed="top">
-                    <NavbarBrand onClick={this.scrollToTop} style={navBrandStyle}>steph gu</NavbarBrand>
+                    <NavbarBrand href="/" style={navBrandStyle}>steph gu</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
