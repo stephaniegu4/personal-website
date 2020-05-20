@@ -43,7 +43,7 @@ class HeaderText extends React.Component {
     updateWindowDimensions = () => {
         var smallWidth = window.innerWidth < 450
         this.setState({ 
-            iconWidth: smallWidth ? '200px' : '300px'
+            iconWidth: smallWidth ? '0px' : '300px'
         })
     }
 
@@ -57,7 +57,8 @@ class HeaderText extends React.Component {
             width: this.state.iconWidth,
             height: 'auto',
             paddingTop: '10px',
-            paddingBottom: '10px'
+            paddingBottom: '10px',
+            float: 'right'
         }
 
         var colStyle = {
@@ -83,7 +84,7 @@ class HeaderText extends React.Component {
                                     <Col className="subHeaderText">
                                         I'm a <TextTransition
                                             text={descriptors[this.state.index]}
-                                            style={{ fontFamily: 'JostRegular', color: colors[this.state.colorIndex] }}
+                                            style={{ color: colors[this.state.colorIndex] }}
                                             inline
                                         />
                                     </Col>

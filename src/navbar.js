@@ -53,13 +53,16 @@ class NavBar extends React.Component {
             paddingRight: '10px',
             fontFamily: 'JostRegular',
             cursor: 'pointer',
-            fontSize: '18px'
+            fontSize: '18px',
+            paddingTop: '5px',
+            paddingBottom: '5px'
         }
 
         var navBrandStyle = {
             color: "#f7a38f",
             paddingLeft: '10px',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            fontFamily: 'JostBold'
         }
 
         return(
