@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
-            $mail->setFrom($ini['mail_user'], $name);
+            $mail->setFrom($ini['mail_user'], 'Contact Form');
             $mail->addAddress($ini['mail_send_to']);
             $mail->addReplyTo($ini['mail_user'], 'Information');
 

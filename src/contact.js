@@ -8,7 +8,8 @@ import {
     Form,
     FormGroup,
     Input,
-    Alert
+    Alert,
+    Spinner
 } from 'reactstrap';
 import EmailIcon from '@material-ui/icons/Email';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -61,7 +62,8 @@ class ContactForm extends React.Component {
             message: '',
             showAlert: false,
             alertMessage: '',
-            alertColour: "danger"
+            alertColour: "danger",
+            showSpinner: false
         }
     }
 
@@ -75,6 +77,10 @@ class ContactForm extends React.Component {
         e.preventDefault()
         console.log(this.state)
 
+        this.setState({
+            showSpinner: true
+        })
+
         axios({
             method: "POST",
             url: "http://localhost:3001",
@@ -85,14 +91,16 @@ class ContactForm extends React.Component {
                 this.setState({
                     showAlert: true,
                     alertMessage: 'Message sent successfully!',
-                    alertColour: 'success'
+                    alertColour: 'success',
+                    showSpinner: false
                 })
                 this.resetForm()
             } else if (response.data.status === 'fail') {
                 this.setState({
                     showAlert: true,
-                    alertMessage: 'Message failed to send.',
-                    alertColour: 'danger'
+                    alertMessage: response.data.message,
+                    alertColour: 'danger',
+                    showSpinner: false
                 })
             }
         })
@@ -121,12 +129,6 @@ class ContactForm extends React.Component {
             marginRight: '25%',
             marginTop: '50px',
             marginBottom: '50px'
-        }
-
-        var headerText = {
-            fontFamily: 'JostBold',
-            fontSize: '45px',
-            overflowWrap: 'break-word'
         }
 
         var subtitleText = {
@@ -195,6 +197,9 @@ class ContactForm extends React.Component {
                             style={inputStyle} />
                     </FormGroup>
                     <Button type="submit" outline color="secondary" style={buttonStyle} >Submit</Button>
+                    {this.state.showSpinner ? 
+                        <Spinner color="secondary" style={{ marginLeft: '15px' }} />
+                    : null}
                 </Form>
             </div>
         );
