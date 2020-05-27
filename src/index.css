@@ -31,6 +31,12 @@ code {
   overflow-wrap: break-word;
 }
 
+.sectionTitleText {
+  font-family: 'JostBold';
+  font-size: 45px;
+  overflow-wrap: break-word;
+}
+
 .bodyText {
   font-family: 'JostRegular';
   font-size: 20px;

@@ -130,7 +130,6 @@ class ContactForm extends React.Component {
         }
 
         var subtitleText = {
-            fontFamily: 'JostLight',
             color: '#4f4d49'
         }
 
@@ -149,8 +148,8 @@ class ContactForm extends React.Component {
                 <Alert color={this.state.alertColour} isOpen={this.state.showAlert} toggle={this.onDismiss} >
                     {this.state.alertMessage}
                 </Alert>
-                <h1 style={headerText} >CONTACT</h1>
-                <p className="bodyText" style={subtitleText} >Connect with me and leave a message!</p>
+                <h1 className="sectionTitleText" >CONTACT</h1>
+                <p className="subtitleText" style={subtitleText} >Connect with me and leave a message!</p>
                 <Form onSubmit={this.handleSubmit.bind(this)}>
                     <Row form>
                         <Col md={6} >

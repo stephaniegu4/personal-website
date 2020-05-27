@@ -13,7 +13,7 @@ import { Link } from 'react-scroll';
 
 const navItems = [
     { title: "About", link: "about", key: 1 }, 
-    { title: "Experience", link: "/experience", key: 2 }, 
+    { title: "Experience", link: "experience", key: 2 }, 
     { title: "Contact", link: "contact", key: 3 },
     { title: "Resume", link: "/resumepdf", key: 4 }, // Add resume pdf as link
     { title: "Gallery", link: "/gallery", key: 5 }
