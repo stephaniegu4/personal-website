@@ -3,10 +3,12 @@ import './index.css';
 import {
     CardDeck,
     Card,
-    CardTitle,
-    CardSubtitle,
-    CardBody
+    CardBody,
+    Container,
+    Row,
+    Col
 } from 'reactstrap';
+import CodeIcon from '@material-ui/icons/Code';
 
 const experiences = [
     {
@@ -94,7 +96,90 @@ class ExperienceSection extends React.Component {
                         );
                     })}
                 </CardDeck>
+                <Goals />
             </div>
+        );
+    }
+}
+
+class GoalCard extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    render() {
+        var containerStyle = {
+            background: this.props.colour,
+            borderRadius: '10px',
+            paddingTop: '20px',
+            paddingBottom: '20px',
+            marginTop: '15px',
+        }
+
+        var bodyStyle = {
+            paddingTop: '10px',
+            color: 'white',
+        }
+
+        return(
+            <Container style={containerStyle} >
+                <Row>
+                    <Col md="1" className="verticalCenter" >
+                        <CodeIcon style={{ fill: 'white' }} />
+                    </Col>
+                    <Col className="bodyText" style={{ color: 'white' }} >{this.props.title}</Col>
+                </Row>
+                <Row>
+                    <Col className="subtitleText" style={bodyStyle} >
+                        {this.props.description}
+                    </Col>
+                </Row>
+            </Container>
+        );
+    }
+}
+
+const futureGoals = [
+    {
+        key: 1,
+        title: "Backend",
+        colour: '#383d5c',
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
+    },
+    {
+        key: 2,
+        title: "Game Development",
+        colour: '#383d5c',
+        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
+    }
+]
+
+class Goals extends React.Component {
+    render() {
+        var headerStyle = {
+            fontSize: '35px'
+        }
+
+        var containerStyle = {
+            paddingTop: '30px'
+        }
+
+        return(
+            <Container style={containerStyle}>
+                <Row>
+                    <h1 className="sectionTitleText" style={headerStyle}>For the Future:</h1>
+                </Row>
+                <Row>
+                    {futureGoals.map(item => {
+                        return (
+                            <Col md="5">
+                                <GoalCard title={item.title} colour={item.colour} description={item.description} />
+                            </Col>
+                        );
+                    })
+                    }
+                </Row>
+            </Container>
         );
     }
 }
