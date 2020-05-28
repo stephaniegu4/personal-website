@@ -23,7 +23,6 @@ class HeaderText extends React.Component {
         this.state = {
             index: 0,
             colorIndex: 0,
-            iconWidth: ''
         };
     }
 
@@ -32,35 +31,13 @@ class HeaderText extends React.Component {
             index: this.state.index == descriptors.length - 1 ? 0 : this.state.index + 1,
             colorIndex: this.state.colorIndex == colors.length - 1 ? 0 : this.state.colorIndex + 1,
         }), 2500)
-        this.updateWindowDimensions()
-        window.addEventListener('resize', this.updateWindowDimensions)
     }
 
     componentWillUnmount() {
         clearInterval(this.interval)
-        window.removeEventListener('resize', this.updateWindowDimensions)
-    }
-
-    updateWindowDimensions = () => {
-        var smallWidth = window.innerWidth < 450
-        this.setState({ 
-            iconWidth: smallWidth ? '0px' : '300px'
-        })
     }
 
     render() {
-
-        var heightStyle = {
-            height: this.state.heightStyle
-        }
-
-        var iconStyle = {
-            width: this.state.iconWidth,
-            height: 'auto',
-            paddingTop: '10px',
-            paddingBottom: '10px',
-            float: 'right'
-        }
 
         var colStyle = {
             paddingTop: '20px',
@@ -68,11 +45,11 @@ class HeaderText extends React.Component {
         }
 
         return (
-            <div id="start" style={{ ...heightStyle, ...containerStyle}} className="verticalCenter" >
+            <div id="start" style={containerStyle} className="verticalCenter fullHeightStyle" >
                 <Container>
                     <Row>
                         <Col md={{ size: 4 }} >
-                            <img src={require('./images/bitmoji.jpg')} style={iconStyle} alt="" />
+                            <img src={require('./images/bitmoji.jpg')} id="headerIcon" alt="" />
                         </Col>
                         <Col md="8" className="verticalCenter" style={colStyle} >
                             <Container fluid >

@@ -32,12 +32,24 @@ code {
   margin-bottom: 50px;
 }
 
+#headerIcon {
+  width: 300px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  float: right;
+}
+
 #projects {
   padding-left: 15%;
   padding-right: 15%;
   background-color: #22222e;
   margin-top: 50px;
   padding-bottom: 50px;
+}
+
+.fullHeightStyle {
+  height: 100%;
 }
 
 .headerText {
@@ -112,12 +124,22 @@ code {
   src: local('JostBold'), url("./fonts/Jost-Bold.ttf") format('truetype');
 }
 
+@media (max-width: 1400px) {
+  .fullHeightStyle {
+    height: 70%;
+  }
+}
+
 @media (max-width: 460px) {
   .experienceSection {
     margin-left: 5%;
     margin-right: 5%;
     padding-top: 80px;
     padding-bottom: 50px;
+  }
+
+  .fullHeightStyle {
+    height: 70%;
   }
   
   .sectionTitleText {
@@ -139,6 +161,10 @@ code {
     margin-right: 10%;
     margin-top: 50px;
     margin-bottom: 50px;
+  }
+
+  #headerIcon {
+    width: 0px;
   }
   
   #projects {
