@@ -32,6 +32,11 @@ code {
   margin-bottom: 50px;
 }
 
+#contactWrapper {
+  background: url('./svgs/wave2.svg') no-repeat top;
+  padding-top: 45px;
+}
+
 #headerIcon {
   width: 400px;
   height: auto;

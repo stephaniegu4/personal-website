@@ -139,61 +139,63 @@ class ContactForm extends React.Component {
         }
 
         return (
-            <div id="contact" >
-                <Alert color={this.state.alertColour} isOpen={this.state.showAlert} toggle={this.onDismiss} >
-                    {this.state.alertMessage}
-                </Alert>
-                <h1 className="sectionTitleText" >CONTACT</h1>
-                <p className="subtitleText" style={subtitleText} >Connect with me and leave a message!</p>
-                <Form onSubmit={this.handleSubmit.bind(this)}>
-                    <Row form>
-                        <Col md={6} >
-                            <FormGroup>
-                                <Input 
-                                    type="name" 
-                                    name="name" 
-                                    placeholder="Name*" 
-                                    value={this.state.name}
-                                    onChange={this.handleChange} 
-                                    required style={inputStyle} />
-                            </FormGroup>
-                        </Col>
-                        <Col md={6} >
-                            <FormGroup>
-                                <Input 
-                                    type="number" 
-                                    name="number" 
-                                    placeholder="Phone Number" 
-                                    value={this.state.number}
-                                    onChange={this.handleChange} 
-                                    style={inputStyle} />
-                            </FormGroup>
-                        </Col>
-                    </Row>
-                    <FormGroup>
-                        <Input 
-                            type="email" 
-                            name="email" 
-                            placeholder="Email*" 
-                            value={this.state.email}
-                            onChange={this.handleChange} 
-                            required style={inputStyle} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Input 
-                            type="textarea" 
-                            name="message"
-                            placeholder="Message*" 
-                            value={this.state.message}
-                            onChange={this.handleChange} 
-                            required
-                            style={inputStyle} />
-                    </FormGroup>
-                    <Button type="submit" outline color="secondary" style={buttonStyle} >Submit</Button>
-                    {this.state.showSpinner ? 
-                        <Spinner color="secondary" style={{ marginLeft: '15px' }} />
-                    : null}
-                </Form>
+            <div id="contactWrapper">
+                <div id="contact" >
+                    <Alert color={this.state.alertColour} isOpen={this.state.showAlert} toggle={this.onDismiss} >
+                        {this.state.alertMessage}
+                    </Alert>
+                    <h1 className="sectionTitleText" >CONTACT</h1>
+                    <p className="subtitleText" style={subtitleText} >Connect with me and leave a message!</p>
+                    <Form onSubmit={this.handleSubmit.bind(this)}>
+                        <Row form>
+                            <Col md={6} >
+                                <FormGroup>
+                                    <Input
+                                        type="name"
+                                        name="name"
+                                        placeholder="Name*"
+                                        value={this.state.name}
+                                        onChange={this.handleChange}
+                                        required style={inputStyle} />
+                                </FormGroup>
+                            </Col>
+                            <Col md={6} >
+                                <FormGroup>
+                                    <Input
+                                        type="number"
+                                        name="number"
+                                        placeholder="Phone Number"
+                                        value={this.state.number}
+                                        onChange={this.handleChange}
+                                        style={inputStyle} />
+                                </FormGroup>
+                            </Col>
+                        </Row>
+                        <FormGroup>
+                            <Input
+                                type="email"
+                                name="email"
+                                placeholder="Email*"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                required style={inputStyle} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Input
+                                type="textarea"
+                                name="message"
+                                placeholder="Message*"
+                                value={this.state.message}
+                                onChange={this.handleChange}
+                                required
+                                style={inputStyle} />
+                        </FormGroup>
+                        <Button type="submit" outline color="secondary" style={buttonStyle} >Submit</Button>
+                        {this.state.showSpinner ?
+                            <Spinner color="secondary" style={{ marginLeft: '15px' }} />
+                            : null}
+                    </Form>
+                </div>
             </div>
         );
     }
