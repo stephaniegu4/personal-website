@@ -6,7 +6,8 @@ import {
     CardBody,
     Container,
     Row,
-    Col
+    Col,
+    Collapse
 } from 'reactstrap';
 import CodeIcon from '@material-ui/icons/Code';
 
@@ -34,17 +35,62 @@ const experiences = [
 ];
 
 class ExperienceSection extends React.Component {
-    render() {
+    constructor(props) {
+        super(props)
 
-        var cardStyle = {
-            border: 'none',
-            borderRadius: '0',
-            paddingRight: '20px'
+        this.state = {
+            isOpen: false
         }
+    } 
+
+    render() {
 
         var deckStyle = {
             marginTop: '20px'
         }
+
+        return(
+            <div className="experienceSection" id="experience" >
+                <h1 className="sectionTitleText" >EXPERIENCE</h1>
+                <p className="subtitleText" >Here's a longer, more detailed version of my resume!</p>
+                <CardDeck style={deckStyle} >
+                    {experiences.map(item => {
+                        return(
+                            <ExperienceCard 
+                                key={item.key}
+                                title={item.title}
+                                company={item.company}
+                                location={item.location}
+                                date={item.date}
+                                description={item.description}
+                                personal={item.personal}
+                                color={item.color}
+                            />
+                        );
+                    })}
+                </CardDeck>
+                <Goals />
+            </div>
+        );
+    }
+}
+
+class ExperienceCard extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            isOpen: false
+        }
+    }
+
+    toggle = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        })
+    }
+
+    render() {
 
         var titleStyle = {
             fontFamily: 'JostBold',
@@ -55,42 +101,44 @@ class ExperienceSection extends React.Component {
         var secondaryStyle = {
             color: '#292929'
         }
-        
-        var subTextStyle = {
-            color: '#545454',
-            fontSize: '16px'
-        }
 
         var descriptionStyle = {
             paddingTop: '10px',
         }
 
+        var cardStyle = {
+            border: 'none',
+            //borderRadius: '0px',
+            paddingRight: '20px',
+            cursor: 'pointer'
+        }
+
+        var clickForMore = {
+            marginTop: '25px',
+            fontSize: '16px'
+        }
+
+        var border = "8px solid " + this.props.color
+
         return(
-            <div className="experienceSection" id="experience" >
-                <h1 className="sectionTitleText" >EXPERIENCE</h1>
-                <p className="subtitleText" >Here's a longer, more detailed version of my resume!</p>
-                <CardDeck style={deckStyle} >
-                    {experiences.map(item => {
-                        var border = "5px solid " + item.color
-                        return(
-                            <Card style={{ ...cardStyle, ...{borderLeft: border} }} key={item.key} >
-                                <CardBody>
-                                    <h1 className="bodyText" style={titleStyle} >{item.title}</h1>
-                                    <h1 className="bodyText" style={secondaryStyle} >{item.company}</h1>
-                                    <h1 className="bodyText" style={subTextStyle} >{item.location}</h1>
-                                    <h1 className="bodyText" style={subTextStyle} >{item.date}</h1>
-                                    <p className="subtitleText" style={descriptionStyle} >{item.description}</p>
-                                    <p className="subtitleText" style={{ fontFamily: 'JostBold' }}>Personal Note: <span className="subtitleText">
-                                            {item.personal}
-                                        </span>
-                                    </p>
-                                </CardBody>
-                            </Card>
-                        );
-                    })}
-                </CardDeck>
-                <Goals />
-            </div>
+            <Card style={{ ...cardStyle, ...{ borderLeft: border } }} key={this.props.key} onClick={this.toggle} >
+                <CardBody>
+                    <h1 className="bodyText" style={titleStyle} >{this.props.title}</h1>
+                    <h1 className="bodyText" style={secondaryStyle} >{this.props.company}</h1>
+                    <h1 className="subtitleText" >{this.props.location}</h1>
+                    <h1 className="subtitleText" >{this.props.date}</h1>
+                    <Collapse isOpen={!this.state.isOpen}>
+                        <p className="subtitleText" style={clickForMore}>Click for more!</p>
+                    </Collapse>
+                    <Collapse isOpen={this.state.isOpen} >
+                        <p className="subtitleText" style={descriptionStyle} >{this.props.description}</p>
+                        <p className="subtitleText" style={{ fontFamily: 'JostBold' }}>Personal Note: <span className="subtitleText">
+                            {this.props.personal}
+                        </span>
+                        </p>
+                    </Collapse>
+                </CardBody>
+            </Card>
         );
     }
 }
