@@ -14,9 +14,10 @@ import { Link } from 'react-scroll';
 const navItems = [
     { title: "About", link: "about", key: 1 }, 
     { title: "Experience", link: "experience", key: 2 }, 
-    { title: "Contact", link: "contact", key: 3 },
-    { title: "Resume", link: "/resumepdf", key: 4 }, // Add resume pdf as link
-    { title: "Gallery", link: "/gallery", key: 5 }
+    { title: "Projects", link: "projects", key: 3 },
+    { title: "Study", link: "study", key: 4 },
+    { title: "Contact", link: "contact", key: 5 },
+    { title: "Resume", link: "/resumepdf", key: 6 }, // Add resume pdf as link
 ]
 
 class NavBar extends React.Component {

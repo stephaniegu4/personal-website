@@ -41,7 +41,7 @@ class AboutSection extends React.Component {
                                             I'm always looking for chances to learn new things and meet new people, and <span style={{ fontFamily: 'JostBold' }} >I'm actively looking for internships in Winter 2021 or Summer 2021. </span>
                                             <br /><br />
                                             If I'm not working or playing with the dogs, you can probably find me pursuing my dream of being an amateur baker. Ask me for my 
-                                            chocolate chip cookies recipe :).
+                                            chocolate chip cookies recipe <span role="img" aria-label="cowboy emoji">🤠</span>.
                                             <br /><br />
                                             Hobbies include: eating, online shopping too much, volleyball, re-bingeing Brooklyn 99
                                             <br /><br />
