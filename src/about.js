@@ -15,14 +15,6 @@ class AboutSection extends React.Component {
             height: 'auto'
         }
 
-        var containerStyle = {
-            paddingTop: '50px',
-            paddingLeft: '10%',
-            paddingRight: '10%',
-            paddingBottom: '50px',
-            background: '#22222e'
-        }
-
         var bodyStyle = {
             paddingTop: '20px',
             paddingBottom: '20px'
@@ -35,8 +27,7 @@ class AboutSection extends React.Component {
         }
 
         return(
-            <div style={containerStyle} id="about" >
-                {/* <h1 className="headerText" style={headerStyle} >Me</h1> */}
+            <div id="about" >
                 <Container fluid style={{paddingTop: '20px'}}>
                     <Row>
                         <Col md="5"><img style={imgStyle} src={require('./images/sg.jpg')} /></Col>
@@ -44,10 +35,10 @@ class AboutSection extends React.Component {
                             <Container fluid>
                                 <Row>
                                     <Col md="12">
-                                        <p className="bodyText" style={{ color: 'white' }}>
+                                        <p className="subtitleText" style={{ color: 'white' }}>
                                             Hey there! I'm a second year student at the University of Waterloo currently pursuing a degree in computer science. 
                                             I'm an aspiring software developer hoping to grow, excel, and make an impact wherever I go!
-                                            I'm always looking for chances to learn new things and meet new people, and I'm actively looking for internships in Winter 2021 or Summer 2021. 
+                                            I'm always looking for chances to learn new things and meet new people, and <span style={{ fontFamily: 'JostBold' }} >I'm actively looking for internships in Winter 2021 or Summer 2021. </span>
                                             <br /><br />
                                             If I'm not working or playing with the dogs, you can probably find me pursuing my dream of being an amateur baker. Ask me for my 
                                             chocolate chip cookies recipe :).

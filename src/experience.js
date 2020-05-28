@@ -36,13 +36,6 @@ const experiences = [
 class ExperienceSection extends React.Component {
     render() {
 
-        var containerStyle = {
-            marginLeft: '15%',
-            marginRight: '15%',
-            paddingTop: '80px',
-            paddingBottom: '50px'
-        }
-
         var cardStyle = {
             border: 'none',
             borderRadius: '0',
@@ -73,14 +66,14 @@ class ExperienceSection extends React.Component {
         }
 
         return(
-            <div style={containerStyle} id="experience" >
+            <div className="experienceSection" id="experience" >
                 <h1 className="sectionTitleText" >EXPERIENCE</h1>
                 <p className="subtitleText" >Here's a longer, more detailed version of my resume!</p>
                 <CardDeck style={deckStyle} >
                     {experiences.map(item => {
                         var border = "5px solid " + item.color
                         return(
-                            <Card style={{ ...cardStyle, ...{borderLeft: border} }} >
+                            <Card style={{ ...cardStyle, ...{borderLeft: border} }} key={item.key} >
                                 <CardBody>
                                     <h1 className="bodyText" style={titleStyle} >{item.title}</h1>
                                     <h1 className="bodyText" style={secondaryStyle} >{item.company}</h1>
@@ -172,7 +165,7 @@ class Goals extends React.Component {
                 <Row>
                     {futureGoals.map(item => {
                         return (
-                            <Col md="5">
+                            <Col md="5" key={item.key} >
                                 <GoalCard title={item.title} colour={item.colour} description={item.description} />
                             </Col>
                         );

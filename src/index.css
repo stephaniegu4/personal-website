@@ -17,6 +17,29 @@ code {
     monospace;
 }
 
+#about {
+  padding-top: 50px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 50px;
+  background-color: #22222e;
+}
+
+#contact {
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#projects {
+  padding-left: 15%;
+  padding-right: 15%;
+  background-color: #22222e;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
 .headerText {
   font-family: 'JostBold';
   font-size: 60px;
@@ -50,6 +73,13 @@ code {
   overflow-wrap: break-word;
 }
 
+.experienceSection {
+  margin-left: 15%;
+  margin-right: 15%;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
 .verticalCenter {
   display: flex;
   align-items: center;
@@ -80,4 +110,42 @@ code {
 @font-face {
   font-family: 'JostBold';
   src: local('JostBold'), url("./fonts/Jost-Bold.ttf") format('truetype');
+}
+
+@media (max-width: 460px) {
+  .experienceSection {
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+  
+  .sectionTitleText {
+    font-family: 'JostBold';
+    font-size: 30px;
+    overflow-wrap: break-word;
+  }
+
+  #about {
+    padding-top: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 50px;
+    background-color: #22222e;
+  }
+
+  #contact {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  #projects {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #22222e;
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
 }

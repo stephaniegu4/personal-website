@@ -124,13 +124,6 @@ class ContactForm extends React.Component {
     }
 
     render() {
-        var containerStyle = {
-            marginLeft: '25%',
-            marginRight: '25%',
-            marginTop: '50px',
-            marginBottom: '50px'
-        }
-
         var subtitleText = {
             color: '#4f4d49'
         }
@@ -146,7 +139,7 @@ class ContactForm extends React.Component {
         }
 
         return (
-            <div style={containerStyle} id="contact" >
+            <div id="contact" >
                 <Alert color={this.state.alertColour} isOpen={this.state.showAlert} toggle={this.onDismiss} >
                     {this.state.alertMessage}
                 </Alert>

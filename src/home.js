@@ -5,6 +5,7 @@ import TextTransition from 'react-text-transition';
 import { AboutSection } from './about.js';
 import { ContactForm } from './contact.js';
 import ExperienceSection from './experience.js';
+import ProjectSection from './projects.js';
 
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#f7a38f", "#9ed5e6", "#b49ee6"];
@@ -154,6 +155,7 @@ const Home = () => {
             <HeaderText />
             <AboutSection />
             <ExperienceSection />
+            <ProjectSection />
             <ContactForm />
         </div>
     );
