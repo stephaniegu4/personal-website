@@ -33,11 +33,10 @@ code {
 }
 
 #headerIcon {
-  width: 300px;
+  width: 400px;
   height: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  float: right;
 }
 
 #projects {
@@ -46,6 +45,11 @@ code {
   background-color: #22222e;
   margin-top: 50px;
   padding-bottom: 50px;
+}
+
+#start {
+  background: url(./svgs/wave.svg) no-repeat center bottom;
+  background-size: contain;
 }
 
 .fullHeightStyle {
@@ -62,6 +66,13 @@ code {
 .subHeaderText {
   font-family: 'JostRegular';
   font-size: 35px;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.supportingText {
+  font-family: 'JostRegular';
+  font-size: 30px;
   text-align: left;
   overflow-wrap: break-word;
 }
@@ -126,7 +137,14 @@ code {
 
 @media (max-width: 1400px) {
   .fullHeightStyle {
-    height: 70%;
+    height: 80%;
+  }
+
+  #headerIcon {
+    width: 250px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 
@@ -139,7 +157,7 @@ code {
   }
 
   .fullHeightStyle {
-    height: 70%;
+    height: 90%;
   }
   
   .sectionTitleText {
@@ -173,5 +191,28 @@ code {
     background-color: #22222e;
     margin-top: 50px;
     padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 320px) {
+  .headerText {
+    font-family: 'JostBold';
+    font-size: 50px;
+    text-align: left;
+    overflow-wrap: 'break-word';
+  }
+
+  .subHeaderText {
+    font-family: 'JostRegular';
+    font-size: 25px;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+
+  .supportingText {
+    font-family: 'JostRegular';
+    font-size: 20px;
+    text-align: left;
+    overflow-wrap: break-word;
   }
 }

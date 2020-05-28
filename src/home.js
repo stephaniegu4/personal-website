@@ -10,8 +10,8 @@ import ProjectSection from './projects.js';
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#f7a38f", "#9ed5e6", "#b49ee6"];
 const containerStyle = {
-    marginRight: '5%',
-    marginLeft: '5%',
+    // marginRight: '5%',
+    // marginLeft: '5%',
     paddingTop: '100px',
     paddingBottom: '80px',
 }
@@ -48,8 +48,8 @@ class HeaderText extends React.Component {
             <div id="start" style={containerStyle} className="verticalCenter fullHeightStyle" >
                 <Container>
                     <Row>
-                        <Col md={{ size: 4 }} >
-                            <img src={require('./images/bitmoji.jpg')} id="headerIcon" alt="" />
+                        <Col md={{ size: 4 }} style={{ display: 'flex', alignItems: 'right' }} >
+                            <img src={require('./images/bitmoji.png')} id="headerIcon" alt="" />
                         </Col>
                         <Col md="8" className="verticalCenter" style={colStyle} >
                             <Container fluid >
@@ -68,7 +68,7 @@ class HeaderText extends React.Component {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col md="12" className="subHeaderText" style={{ fontSize: '30px' }}>Get to know me!</Col>
+                                    <Col md="12" className="supportingText" >Get to know me!</Col>
                                 </Row>
                             </Container>
                         </Col>

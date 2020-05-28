@@ -121,7 +121,7 @@ class ExperienceCard extends React.Component {
         var border = "8px solid " + this.props.color
 
         return(
-            <Card style={{ ...cardStyle, ...{ borderLeft: border } }} key={this.props.key} onClick={this.toggle} >
+            <Card style={{ ...cardStyle, ...{ borderLeft: border } }} onClick={this.toggle} >
                 <CardBody>
                     <h1 className="bodyText" style={titleStyle} >{this.props.title}</h1>
                     <h1 className="bodyText" style={secondaryStyle} >{this.props.company}</h1>
@@ -209,6 +209,10 @@ class Goals extends React.Component {
             <Container style={containerStyle}>
                 <Row>
                     <h1 className="sectionTitleText" style={headerStyle}>For the Future:</h1>
+                    <p className="subtitleText" >
+                        Although my previous experience has been primarily doing iOS/mobile development, I would love an opportunity to explore and work in other fields!
+                        What I love about software development is how there's <span style={{ fontStyle: 'italic' }} >always</span> something new to learn. Here's a list of just some of the areas I hope to work in soon!
+                    </p>
                 </Row>
                 <Row>
                     {futureGoals.map(item => {
