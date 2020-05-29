@@ -20,28 +20,50 @@ const projects = [
         the more points they get, and the more animals they can unlock on the path to restoring the ecosystem! This was a team project
         created in a 17 hour sprint for Hack The North 2019, and although the final product is not perfect, it was an awesome learning 
         experience.
-        `
+        `,
+        emoji: '🌎',
+        emojiLabel: 'earth',
+        link: 'https://github.com/stephaniegu4'
     },
     {
         key: 2,
         title: 'Biquadris',
         skills: 'C++',
-        description: '',
-        summary: ''
+        description: `This was a group project for a C++ Object Oriented Software Development course at university (CS246)! 
+        We built both a graphical interface for playing the game using XQuartz, as well as a textual version in the terminal. The functionalities
+        of our game include all the basics of Tetris along with increasingly difficult levels, special effects and actions to make the game more competitive. 
+        Our implementation uses various design patterns such as MVC, Observer, and Factory. Overall, I learned a lot from working on this project 
+        and it was super fun to make!`,
+        summary: 'Biquadris is a two-player competitive game of Tetris built with C++.',
+        emoji: '🕹',
+        emojiLabel: 'joystick'
     },
     {
         key: 3,
-        title: 'Kingdom Hearts Game',
-        skills: 'Java',
-        description: '',
-        summary: ''
+        title: 'Personal Website',
+        skills: 'ReactJS, PHP, CSS',
+        description: `This website was created using ReactJS and CSS. I wrote a PHP script to create the emailing functionality of the contact form
+        at the end of this website. I decided to try to make my own personal website in 2018 because I wanted to learn more about React.
+        The first version of my website was a complete mess (the opposite of user friendly and mobile friendly), and I am constantly trying to improve it!
+        I've learned a lot since then including how to make my app scalable, and taking more into consideration the user experience. I
+        still have a lot to learn, so please let me know if you have any feedback for this page!`,
+        summary: `You're looking at it right now!`,
+        emoji: '🚀',
+        emojiLabel: 'rocket',
+        link: 'https://github.com/stephaniegu4'
     },
     {
         key: 4,
-        title: 'Personal Website',
-        skills: 'ReactJS, PHP, CSS',
-        description: '',
-        summary: ''
+        title: 'Kingdom Hearts Game',
+        skills: 'Java',
+        description: `This was my first ever largescale project in computer science, so it had a huge impact on me. This was for a highschool 
+        computer science course, and developing this game is what kickstarted my interest in game development! It was built using Java Swing, 
+        and I had so much fun designing the UI to be Kingdom Hearts themed (my fave video game). I have matured a lot as a developer since then, 
+        and I've realized that the code for this game is definitely FAR, far from perfect (or even good to be honest), but developing this game
+        was one of the biggest contributors to the decision I made to major in CS, so I'm keeping it here to honour it.`,
+        summary: `A Kingdom Hearts themed game inspired by 1942 (plane shooting arcade game).`,
+        emoji: '👾',
+        emojiLabel: 'alien monster'
     }
 ]
 
@@ -58,6 +80,13 @@ class ProjectSection extends React.Component {
                 <h1 className="sectionTitleText" style={headerStyle} >PROJECTS</h1>
                 <Container>
                     <Row>
+                        <p className="subtitleText" style={{ color: 'white' }}>
+                            These are some of the projects I've worked on in the past! Click on the title to go their respective github repos.
+                            Unfortuantely, some of these were projects for a school course (titles in black), so I cannot provide the github link for them, but feel free to reach out
+                            if you have any specific questions!
+                        </p>
+                    </Row>
+                    <Row>
                     {projects.map(item => {
                         return(
                             <Col md="4">
@@ -67,6 +96,9 @@ class ProjectSection extends React.Component {
                                     skills={item.skills}
                                     description={item.description}
                                     summary={item.summary}
+                                    emoji={item.emoji}
+                                    emojiLabel={item.emojiLabel}
+                                    link={item.link}
                                 />
                             </Col>
                         );
@@ -128,7 +160,8 @@ class ProjectCard extends React.Component {
             <Container style={cardStyle} onClick={this.toggle} >
                 <Row>
                     <Col className="bodyText" style={titleStyle} >
-                        {this.props.title}
+                        <a href={this.props.link} >{this.props.title}</a>
+                        <span role="img" aria-label={this.props.emojiLabel} > {this.props.emoji}</span>
                     </Col>
                 </Row>
                 <Row>

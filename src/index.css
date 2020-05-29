@@ -17,6 +17,15 @@ code {
     monospace;
 }
 
+a {
+  color: #7478c2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #484C93;
+}
+
 #about {
   padding-top: 50px;
   padding-left: 10%;
