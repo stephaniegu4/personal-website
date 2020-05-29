@@ -23,7 +23,7 @@ const projects = [
         `,
         emoji: '🌎',
         emojiLabel: 'earth',
-        link: 'https://github.com/stephaniegu4'
+        link: 'https://github.com/stephaniegu4/EcoStore'
     },
     {
         key: 2,
@@ -50,7 +50,7 @@ const projects = [
         summary: `You're looking at it right now!`,
         emoji: '🚀',
         emojiLabel: 'rocket',
-        link: 'https://github.com/stephaniegu4'
+        link: 'https://github.com/stephaniegu4/personal-website'
     },
     {
         key: 4,
@@ -160,7 +160,7 @@ class ProjectCard extends React.Component {
             <Container style={cardStyle} onClick={this.toggle} >
                 <Row>
                     <Col className="bodyText" style={titleStyle} >
-                        <a href={this.props.link} >{this.props.title}</a>
+                        <a href={this.props.link} target="_blank" >{this.props.title}</a>
                         <span role="img" aria-label={this.props.emojiLabel} > {this.props.emoji}</span>
                     </Col>
                 </Row>
