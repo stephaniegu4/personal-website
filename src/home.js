@@ -9,6 +9,7 @@ import ProjectSection from './projects.js';
 
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#ebbed5", "#9ed5e6", "#484C93"];
+const icons = ['animoji.png', 'animoji2.png', 'animoji3.png'];
 const containerStyle = {
     // marginRight: '5%',
     // marginLeft: '5%',
@@ -23,6 +24,7 @@ class HeaderText extends React.Component {
         this.state = {
             index: 0,
             colorIndex: 0,
+            imgIndex: 0
         };
     }
 
@@ -30,6 +32,7 @@ class HeaderText extends React.Component {
         this.interval = setInterval(() => this.setState({ 
             index: this.state.index == descriptors.length - 1 ? 0 : this.state.index + 1,
             colorIndex: this.state.colorIndex == colors.length - 1 ? 0 : this.state.colorIndex + 1,
+            imgIndex: this.state.imgIndex == icons.length - 1 ? 0 : this.state.imgIndex + 1
         }), 2500)
     }
 
@@ -49,7 +52,7 @@ class HeaderText extends React.Component {
                 <Container>
                     <Row>
                         <Col md={{ size: 4 }} style={{ display: 'flex', alignItems: 'right' }} >
-                            <img src={require('./images/bitmoji.png')} id="headerIcon" alt="" />
+                            <img src={require('./images/' + icons[this.state.imgIndex])} id="headerIcon" alt="" />
                         </Col>
                         <Col md="8" className="verticalCenter" style={colStyle} >
                             <Container fluid >
