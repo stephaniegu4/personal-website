@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.css';
 import {
-    CardDeck,
     Card,
     CardBody,
     Container,
@@ -53,22 +52,26 @@ class ExperienceSection extends React.Component {
             <div className="experienceSection" id="experience" >
                 <h1 className="sectionTitleText" >EXPERIENCE</h1>
                 <p className="subtitleText" >Here's a longer, more detailed version of my <a href="Stephanie Gu Resume Fall 2019.pdf" target="_blank">resume</a>!</p>
-                <CardDeck style={deckStyle} >
-                    {experiences.map(item => {
-                        return(
-                            <ExperienceCard 
-                                key={item.key}
-                                title={item.title}
-                                company={item.company}
-                                location={item.location}
-                                date={item.date}
-                                description={item.description}
-                                personal={item.personal}
-                                color={item.color}
-                            />
-                        );
-                    })}
-                </CardDeck>
+                <Container style={deckStyle} >
+                    <Row>
+                        {experiences.map(item => {
+                            return (
+                                <Col>
+                                    <ExperienceCard
+                                        key={item.key}
+                                        title={item.title}
+                                        company={item.company}
+                                        location={item.location}
+                                        date={item.date}
+                                        description={item.description}
+                                        personal={item.personal}
+                                        color={item.color}
+                                    />
+                                </Col>
+                            );
+                        })}
+                    </Row>
+                </Container>
                 <Goals />
             </div>
         );
