@@ -158,21 +158,32 @@ class GoalCard extends React.Component {
         }
 
         var bodyStyle = {
-            paddingTop: '10px',
             color: 'white',
+        }
+
+        var rowStyle = {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
         }
 
         return(
             <Container style={containerStyle} >
                 <Row>
-                    <Col md="1" className="verticalCenter" >
-                        <CodeIcon style={{ fill: 'white' }} />
+                    <Col md="2" className="verticalCenter" style={{ borderRight: '1px solid #2f3042'}}>
+                        <Container>
+                            <Row>
+                                <Col md="1">
+                                    <CodeIcon style={{ fill: 'white' }} />
+                                </Col>
+                                <Col className="bodyText" style={{ color: 'white' }} >{this.props.title}</Col>
+                            </Row>
+                        </Container>
                     </Col>
-                    <Col className="bodyText" style={{ color: 'white' }} >{this.props.title}</Col>
-                </Row>
-                <Row>
-                    <Col className="subtitleText" style={bodyStyle} >
-                        {this.props.description}
+                    <Col md="10">
+                        <Col className="subtitleText" style={bodyStyle} >
+                            {this.props.description}
+                        </Col>
                     </Col>
                 </Row>
             </Container>
@@ -185,13 +196,22 @@ const futureGoals = [
         key: 1,
         title: "Backend",
         colour: '#383d5c',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
+        description: `
+            While I've developed features end-to-end in mobile apps and communicated a lot with backend services, I've always wanted to 
+            be able to have a full understanding of what exactly I was communicating with. I would love to dive deeper into the world of 
+            backend development! There are so many different things that can be accomplished in this field, and I am excited to learn it all!
+        `
     },
     {
         key: 2,
-        title: "Game Development",
+        title: "Game Dev",
         colour: '#383d5c',
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`
+        description: `
+            I grew up playing a lot of video games, and game development is actually one of the reasons I wanted to pursue computer science
+            in the first place! I would love to be able to be apart of the creation of a game that I would likely purchase and play myself. 
+            It's super surreal being able to see your own work giving enjoyment to so many players, 
+            and it is something I definitely want to experience in the future.
+        `
     }
 ]
 
@@ -214,16 +234,14 @@ class Goals extends React.Component {
                         What I love about software development is how there's <span style={{ fontStyle: 'italic' }} >always</span> something new to learn. Here's a list of just some of the areas I hope to work in soon!
                     </p>
                 </Row>
-                <Row>
                     {futureGoals.map(item => {
                         return (
-                            <Col md="5" key={item.key} >
+                            <Row key={item.key}>
                                 <GoalCard title={item.title} colour={item.colour} description={item.description} />
-                            </Col>
+                            </Row>
                         );
                     })
                     }
-                </Row>
             </Container>
         );
     }
