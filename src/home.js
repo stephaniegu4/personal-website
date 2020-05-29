@@ -6,6 +6,7 @@ import { AboutSection } from './about.js';
 import { ContactForm } from './contact.js';
 import ExperienceSection from './experience.js';
 import ProjectSection from './projects.js';
+import { ScrollToTopButton } from './navbar.js';
 
 const descriptors = ["software engineer", "dog lover", "food enthusiast"];
 const colors = ["#ebbed5", "#9ed5e6", "#484C93"];
@@ -132,6 +133,7 @@ class Profile extends React.Component {
 const Home = () => {
     return(
         <div>
+            <ScrollToTopButton />
             <HeaderText />
             <AboutSection />
             <ExperienceSection />

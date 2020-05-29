@@ -10,6 +10,7 @@ import {
 } from 'reactstrap';
 import Scroll from 'react-scroll';
 import { Link } from 'react-scroll';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 
 const navItems = [
     { title: "About", link: "about", key: 1 }, 
@@ -32,12 +33,6 @@ class NavBar extends React.Component {
     toggle = () => {
         this.setState({
             isOpen: !this.state.isOpen
-        })
-    }
-
-    scrollToTop = () => {
-        Scroll.animateScroll.scrollTo(0, {
-            duration:200
         })
     }
 
@@ -88,4 +83,64 @@ class NavBar extends React.Component {
     }
 }
 
+class ScrollToTopButton extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            showButton: false
+        }
+    }
+
+    componentDidMount() {
+        var scrollComponent = this
+        document.addEventListener("scroll", (e) => {
+            scrollComponent.toggleVisibility()
+        })
+    }
+
+    toggleVisibility = () => {
+        if (window.pageYOffset > 300) {
+            this.setState({
+                showButton: true
+            })
+        } else {
+            this.setState({
+                showButton: false
+            })
+        }
+    }
+
+    scrollToTop = () => {
+        Scroll.animateScroll.scrollTo(0, {
+            duration: 300
+        })
+    }
+
+    render() {
+        var divStyle = {
+            background: '#ebd3df',
+            position: 'fixed',
+            bottom: 20,
+            right: 20,
+            borderRadius: '25px',
+            zIndex: 2,
+            cursor: 'pointer'
+        }
+
+        var iconStyle = {
+            width: '50px',
+            height: '50px',
+            //fill: 'white',
+        }
+
+        return(
+            <div style={divStyle} onClick={this.scrollToTop} className={this.state.showButton ? "fade-in" : "fade-out"} >
+                <ArrowUpwardIcon style={iconStyle}/>
+            </div> 
+        );
+    }
+}
+
 export default NavBar;
+export { ScrollToTopButton };

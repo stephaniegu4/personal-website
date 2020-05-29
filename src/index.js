@@ -6,7 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
 import NavBar from './navbar.js';
 import Home from './home.js';
-import About from './about.js';
 
 function debounce(value, delay) {
   let timer
