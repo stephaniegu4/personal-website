@@ -19,7 +19,7 @@ const experiences = [
         location: "San Francisco, CA",
         date: "Jan 2020 - Apr 2020",
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-        color: "#f7a38f",
+        color: "#eccddd",
         personal: `P.S. The office was amazing because I got to see so many office dogs.`
     },
     {
@@ -29,7 +29,7 @@ const experiences = [
         location: "Toronto, ON",
         date: "Apr 2019 - Aug 2019",
         description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
-        color: "#b49ee6",
+        color: "#E0EBF1",
         personal: ``
     }
 ];
