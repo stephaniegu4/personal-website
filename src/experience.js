@@ -167,10 +167,6 @@ class ExperienceCard extends React.Component {
 }
 
 class GoalCard extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         var containerStyle = {
             background: this.props.colour,
@@ -182,12 +178,6 @@ class GoalCard extends React.Component {
 
         var bodyStyle = {
             color: 'white',
-        }
-
-        var rowStyle = {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
         }
 
         return(

@@ -135,10 +135,6 @@ class ProjectCard extends React.Component {
             cursor: 'pointer'
         }
 
-        var imgStyle = {
-            width: '300px'
-        }
-
         var titleStyle = {
             fontSize: '24px',
             fontFamily: 'JostBold'

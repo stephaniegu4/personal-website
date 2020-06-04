@@ -30,7 +30,7 @@ class AboutSection extends React.Component {
             <div id="about" >
                 <Container fluid style={{paddingTop: '20px'}}>
                     <Row>
-                        <Col md="5"><img style={imgStyle} src={require('./images/sg.jpg')} /></Col>
+                        <Col md="5"><img style={imgStyle} src={require('./images/sg.jpg')} alt="" /></Col>
                         <Col md="6" className="verticalCenter" style={bodyStyle} >
                             <Container fluid>
                                 <Row>

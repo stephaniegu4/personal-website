@@ -31,9 +31,9 @@ class HeaderText extends React.Component {
 
     componentDidMount() {
         this.interval = setInterval(() => this.setState({ 
-            index: this.state.index == descriptors.length - 1 ? 0 : this.state.index + 1,
-            colorIndex: this.state.colorIndex == colors.length - 1 ? 0 : this.state.colorIndex + 1,
-            imgIndex: this.state.imgIndex == icons.length - 1 ? 0 : this.state.imgIndex + 1
+            index: this.state.index === descriptors.length - 1 ? 0 : this.state.index + 1,
+            colorIndex: this.state.colorIndex === colors.length - 1 ? 0 : this.state.colorIndex + 1,
+            imgIndex: this.state.imgIndex === icons.length - 1 ? 0 : this.state.imgIndex + 1
         }), 2500)
     }
 
@@ -75,53 +75,6 @@ class HeaderText extends React.Component {
                                     <Col md="12" className="supportingText" >Get to know me!</Col>
                                 </Row>
                             </Container>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
-        );
-    }
-}
-
-class Profile extends React.Component {
-    render() {
-        var backgroundStyle = {
-            background: '#22222e',
-            paddingTop:'90px',
-            paddingBottom:'90px',
-            paddingLeft: '5%',
-            paddingRight: '5%'
-        }
-
-        var imgStyle = {
-            width:'100%',
-            height:'auto'
-        }
-        
-        var bodyStyle = {
-            color: 'white', 
-            paddingTop: '20px', 
-            paddingBottom: '20px'
-        }
-
-        return(
-            <div style={{...containerStyle, ...backgroundStyle}}>
-                <Container fluid>
-                    <Row>
-                        <Col md="5" ><img style={imgStyle} src={require('./images/profile.jpg')} /></Col>
-                        <Col md="7" className="verticalCenter">
-                            <p className="bodyText" style={bodyStyle}>
-                                Hey there! I'm a second year student at the University of Waterloo currently pursuing a degree in computer science.
-                                I'm an aspiring software developer hoping to grow, excel, and make an impact wherever I go!
-                                I'm always looking for chances to learn new things and meet new people, and I'm actively looking for internships in Winter 2021 or Summer 2021.
-                                <br /><br />
-                                If I'm not working or playing with the dogs, you can probably find me pursuing my dream of being an amateur baker. Ask me for my
-                                chocolate chip cookies recipe :).
-                                <br /><br />
-                                Hobbies include: eating, online shopping too much, volleyball, re-bingeing Brooklyn 99
-                                <br /><br />
-                                If you like what you see or you just want my cookies recipe, I'd love to connect! You know where to find me.
-                            </p>
                         </Col>
                     </Row>
                 </Container>
