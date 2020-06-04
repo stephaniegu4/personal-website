@@ -17,9 +17,13 @@ const experiences = [
         company: "PlanGrid",
         location: "San Francisco, CA",
         date: "Jan 2020 - Apr 2020",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        description: `I worked on the SiteVision team, responsible for the gallery and all media (photos, videos, 360 photos, etc.) within the app. I got to build a variety of new features end-to-end, as well as improve on existing features on the iOS app! I worked with both Swift and Objective-C, as well as utilizing the architectural patterns flux and MVC (I actually wrote a work-term report comparing the two, let me know if you want to read it)!
+            During my time here, I learned how to build solid, testable, and reusable components, as well as learned how to write unit tests with Quick and XCTest. I also got to work a bit on the Android app with Kotlin. It was definitely a huge learning curve, but worth it because I learned so much!
+            During hack week, I got to work on a back-end project with another intern, so I was able to deepen my understanding of how our back-end services
+            functioned and interacted with our app.
+        `,
         color: "#eccddd",
-        personal: `P.S. The office was amazing because I got to see so many office dogs.`
+        personal: `I learned a lot here, and it was an amazing opportunity to work on and interact with so many different platforms! P.S. The office was amazing because I got to see so many office dogs.`
     },
     {
         key: 2,
@@ -27,9 +31,10 @@ const experiences = [
         company: "Osellus Mobile",
         location: "Toronto, ON",
         date: "Apr 2019 - Aug 2019",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
+        description: `I worked on the iOS side for the company flagship app. My responsibilities included mainly implementing new features, some of which were end-to-end and required designing the services needed, data structures to be used, and etc. 
+        The largest project I was able to pick up was creating a new chat messaging feature within the app. This was definitely a challenge, as no other component of the app had similar functionalities to it, and I was able to learn a lot from this project alone! Through this project, I learned about cacheing to support offline interactions, asynchrounous programming, and a lot about UIKit and how to create a chat box UI.`,
         color: "#E0EBF1",
-        personal: ``
+        personal: `This was my first ever internship, and also my first time doing mobile development. I'm super grateful for the opportunities I had here that introduced me to the world of iOS!`
     }
 ];
 
@@ -51,12 +56,12 @@ class ExperienceSection extends React.Component {
         return(
             <div className="experienceSection" id="experience" >
                 <h1 className="sectionTitleText" >EXPERIENCE</h1>
-                <p className="subtitleText" >Here's a longer, more detailed version of my <a href="Stephanie Gu Resume Fall 2019.pdf" target="_blank">resume</a>!</p>
+                <p className="subtitleText" >Here's an informal version of my <a href="Stephanie Gu Resume Fall 2019.pdf" target="_blank">resume</a>!</p>
                 <Container style={deckStyle} >
                     <Row>
                         {experiences.map(item => {
                             return (
-                                <Col>
+                                <Col key={item.key}>
                                     <ExperienceCard
                                         key={item.key}
                                         title={item.title}
@@ -118,10 +123,25 @@ class ExperienceCard extends React.Component {
 
         var clickForMore = {
             marginTop: '25px',
-            fontSize: '16px'
+            fontSize: '16px',
+        }
+
+        var clickButtonStyle = {
+            background: this.props.color,
+            paddingLeft: '5px',
+            paddingRight: '5px',
+            borderRadius: '5px'
         }
 
         var border = "8px solid " + this.props.color
+        var split = this.props.description.split('\n')
+        var key = 0
+        var lines = split.map(line => {
+            key++
+            return(
+                <p key={key}>{line}</p>
+            );
+        })
 
         return(
             <Card style={{ ...cardStyle, ...{ borderLeft: border } }} onClick={this.toggle} >
@@ -131,10 +151,10 @@ class ExperienceCard extends React.Component {
                     <h1 className="subtitleText" >{this.props.location}</h1>
                     <h1 className="subtitleText" >{this.props.date}</h1>
                     <Collapse isOpen={!this.state.isOpen}>
-                        <p className="subtitleText" style={clickForMore}>Click for more!</p>
+                        <p className="subtitleText" style={clickForMore}><span style={clickButtonStyle} >Click for more!</span></p>
                     </Collapse>
                     <Collapse isOpen={this.state.isOpen} >
-                        <p className="subtitleText" style={descriptionStyle} >{this.props.description}</p>
+                        <div className="subtitleText" style={descriptionStyle} >{lines}</div>
                         <p className="subtitleText" style={{ fontFamily: 'JostBold' }}>Personal Note: <span className="subtitleText">
                             {this.props.personal}
                         </span>

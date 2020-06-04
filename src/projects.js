@@ -89,7 +89,7 @@ class ProjectSection extends React.Component {
                     <Row>
                     {projects.map(item => {
                         return(
-                            <Col md="4">
+                            <Col md="4" key={item.key}>
                                 <ProjectCard
                                     key={item.key}
                                     title={item.title}
