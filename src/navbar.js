@@ -18,7 +18,6 @@ const navItems = [
     { title: "Projects", link: "projects", key: 3 },
     { title: "Study", link: "study", key: 4 },
     { title: "Contact", link: "contact", key: 5 },
-    { title: "Resume", link: "/resumepdf", key: 6 }, // Add resume pdf as link
 ]
 
 class NavBar extends React.Component {
@@ -75,6 +74,11 @@ class NavBar extends React.Component {
                                     </NavItem>
                                 );
                             })}
+                            <NavItem style={navItemStyle} >
+                                <a href="Resume Spring 2020.pdf" target="_blank" id="navLinkResume" >
+                                    Resume
+                                </a>
+                            </NavItem>
                         </Nav>
                     </Collapse>
                 </Navbar>

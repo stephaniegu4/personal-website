@@ -17,15 +17,6 @@ code {
     monospace;
 }
 
-a {
-  color: #7478c2;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #484C93;
-}
-
 #about {
   padding-top: 50px;
   padding-left: 10%;
@@ -59,6 +50,15 @@ a:hover {
   background-color: #2e2f4a;
   margin-top: 50px;
   padding-bottom: 80px;
+}
+
+#projectLink {
+  color: #7478c2;
+  text-decoration: none;
+}
+
+#projectLink:hover {
+  color: #484C93;
 }
 
 #start {
@@ -146,6 +146,16 @@ a:hover {
   width: 0px;
   height: 0px;
   transition: opacity 0.5s;
+}
+
+#navLinkResume {
+  color: #e8b0cd;
+  font-family: JostBold;
+}
+
+#navLinkResume:hover {
+  color: #ad7492;
+  text-decoration: none;
 }
 
 @font-face {

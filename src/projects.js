@@ -160,7 +160,7 @@ class ProjectCard extends React.Component {
             <Container style={cardStyle} onClick={this.toggle} >
                 <Row>
                     <Col className="bodyText" style={titleStyle} >
-                        <a href={this.props.link} target="_blank" >{this.props.title}</a>
+                        <a href={this.props.link} target="_blank" id={this.props.link ? "projectLink" : ""} >{this.props.title}</a>
                         <span role="img" aria-label={this.props.emojiLabel} > {this.props.emoji}</span>
                     </Col>
                 </Row>

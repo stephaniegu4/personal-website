@@ -29,22 +29,24 @@ const ConnectIcons = (props) => {
         <Container>
             <Row>
                 <Col>
-                    <a href="http://www.github.com/stephaniegu4">
+                    <a href="http://www.github.com/stephaniegu4" target="_blank" >
                         <GitHubIcon style={iconStyle} className="link-icon" />
                     </a>
                 </Col>
                 <Col>
-                    <a href="mailto: stephaniegu7h@gmail.com">
+                    <a href="mailto: stephaniegu7h@gmail.com" >
                         <EmailIcon style={iconStyle} className="link-icon" />
                     </a>
                 </Col>
                 <Col>
-                    <a href="http://www.linkedin.com/in/gu-stephanie" >
+                    <a href="http://www.linkedin.com/in/gu-stephanie" target="_blank" >
                         <LinkedInIcon style={iconStyle} className="link-icon" />
                     </a>
                 </Col>
                 <Col>
-                    <NotesIcon style={iconStyle} className="link-icon" />
+                    <a href="Resume Spring 2020.pdf" target="_blank" >
+                        <NotesIcon style={iconStyle} className="link-icon" />
+                    </a>
                 </Col>
             </Row>
         </Container>
