@@ -53,6 +53,90 @@ const ConnectIcons = (props) => {
     );
 }
 
+class SimpleContact extends React.Component {
+    render() {
+        var iconStyle = {
+            width: '60px',
+            height: '60px',
+            marginTop: '10px',
+            marginBottom: '10px'
+        }
+
+        var descriptionStyle = {
+            fontFamily: 'JostRegular',
+            fontSize: '18px',
+            background: '#ede4e9',
+            borderRadius: '30px',
+            paddingLeft: '30px',
+            height: '50px',
+        }
+        
+        var rowStyle = {
+            paddingTop: '5px'
+        }
+
+        var subtitleText = {
+            color: '#4f4d49'
+        }
+
+        return(
+            <div id="contactWrapper" style ={{marginBottom: '40px'}}>
+                <div id="simpleContact" >
+                    <Container>
+                        <Row>
+                            <Col md="4">
+                                <img src={require('./images/laptop.png')} id="contactIcon" />
+                            </Col>
+                            <Col md="8" >
+                                <Container >
+                                    <Row>
+                                        <h1 className="sectionTitleText" style={{ marginBottom: '10px' }} >CONTACT</h1>
+                                    </Row>
+                                    <Row>
+                                        <p className="subtitleText" style={subtitleText} >Connect with me!</p>
+                                    </Row>
+                                    <Row style={rowStyle} className="verticalCenter" >
+                                        <Col md="2" >
+                                            <GitHubIcon style={iconStyle} />
+                                        </Col>
+                                        <Col md="10" className="verticalCenter" style={descriptionStyle} >
+                                            stephaniegu4
+                                    </Col>
+                                    </Row>
+                                    <Row style={rowStyle} className="verticalCenter" >
+                                        <Col md="2" >
+                                            <EmailIcon style={iconStyle} />
+                                        </Col>
+                                        <Col md="10" className="verticalCenter" style={descriptionStyle} >
+                                            stephaniegu7h@gmail.com
+                                    </Col>
+                                    </Row>
+                                    <Row style={rowStyle} className="verticalCenter" >
+                                        <Col md="2" >
+                                            <LinkedInIcon style={iconStyle} />
+                                        </Col>
+                                        <Col md="10" className="verticalCenter" style={descriptionStyle} >
+                                            gu-stephanie
+                                    </Col>
+                                    </Row>
+                                    <Row style={rowStyle} className="verticalCenter" >
+                                        <Col md="2" >
+                                            <NotesIcon style={iconStyle} />
+                                        </Col>
+                                        <Col md="10" className="verticalCenter" style={descriptionStyle} >
+                                            My resume!
+                                    </Col>
+                                    </Row>
+                                </Container>
+                            </Col>
+                        </Row>
+                    </Container>
+                </div>
+            </div>
+        );
+    }
+}
+
 class ContactForm extends React.Component {
     constructor(props) {
         super(props)
@@ -203,4 +287,4 @@ class ContactForm extends React.Component {
     }
 }
 
-export { ConnectIcons, ContactForm };
+export { ConnectIcons, ContactForm, SimpleContact };

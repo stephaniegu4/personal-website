@@ -3,7 +3,7 @@ import './index.css';
 import { Container, Row, Col } from 'reactstrap';
 import TextTransition from 'react-text-transition';
 import { AboutSection } from './about.js';
-import { ContactForm } from './contact.js';
+import { ContactForm, SimpleContact } from './contact.js';
 import ExperienceSection from './experience.js';
 import ProjectSection from './projects.js';
 import { ScrollToTopButton } from './navbar.js';
@@ -91,7 +91,7 @@ const Home = () => {
             <AboutSection />
             <ExperienceSection />
             <ProjectSection />
-            <ContactForm />
+            <SimpleContact />
         </div>
     );
 }

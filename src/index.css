@@ -28,13 +28,20 @@ code {
 #contact {
   margin-left: 25%;
   margin-right: 25%;
-  margin-top: 90px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
 #contactWrapper {
   background: url('./svgs/wave2.svg') no-repeat top;
   padding-top: 45px;
+}
+
+#contactIcon {
+  width: 300px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 #headerIcon {
@@ -184,6 +191,13 @@ code {
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+  #contactIcon {
+    width: 250px;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -219,8 +233,26 @@ code {
     margin-bottom: 50px;
   }
 
+  #simpleContact {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
   #headerIcon {
     width: 0px;
+  }
+
+  #contactIcon {
+    width: 0px;
+  }
+
+  #simpleContact {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
   
   #projects {
