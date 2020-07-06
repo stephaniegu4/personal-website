@@ -65,9 +65,9 @@ class SimpleContact extends React.Component {
         var descriptionStyle = {
             fontFamily: 'JostRegular',
             fontSize: '18px',
-            background: '#ede4e9',
-            borderRadius: '30px',
-            paddingLeft: '30px',
+            //background: '#ede4e9',
+            borderBottom: '1.5px solid #9ed5e6',
+            //paddingLeft: '30px',
             height: '50px',
         }
         
