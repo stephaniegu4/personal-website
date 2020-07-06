@@ -59,7 +59,8 @@ class SimpleContact extends React.Component {
             width: '60px',
             height: '60px',
             marginTop: '10px',
-            marginBottom: '10px'
+            marginBottom: '10px',
+            color: 'black'
         }
 
         var descriptionStyle = {
@@ -97,7 +98,9 @@ class SimpleContact extends React.Component {
                                     </Row>
                                     <Row style={rowStyle} className="verticalCenter" >
                                         <Col md="2" >
-                                            <GitHubIcon style={iconStyle} />
+                                            <a href="http://www.github.com/stephaniegu4" target="_blank" >
+                                                <GitHubIcon style={iconStyle} className="link-icon" />
+                                            </a>
                                         </Col>
                                         <Col md="10" className="verticalCenter" style={descriptionStyle} >
                                             stephaniegu4
@@ -105,7 +108,9 @@ class SimpleContact extends React.Component {
                                     </Row>
                                     <Row style={rowStyle} className="verticalCenter" >
                                         <Col md="2" >
-                                            <EmailIcon style={iconStyle} />
+                                            <a href="mailto: stephaniegu7h@gmail.com" >
+                                                <EmailIcon style={iconStyle} className="link-icon" />
+                                            </a>
                                         </Col>
                                         <Col md="10" className="verticalCenter" style={descriptionStyle} >
                                             stephaniegu7h@gmail.com
@@ -113,7 +118,9 @@ class SimpleContact extends React.Component {
                                     </Row>
                                     <Row style={rowStyle} className="verticalCenter" >
                                         <Col md="2" >
-                                            <LinkedInIcon style={iconStyle} />
+                                            <a href="http://www.linkedin.com/in/gu-stephanie" target="_blank" >
+                                                <LinkedInIcon style={iconStyle} className="link-icon" />
+                                            </a>
                                         </Col>
                                         <Col md="10" className="verticalCenter" style={descriptionStyle} >
                                             gu-stephanie
@@ -121,7 +128,9 @@ class SimpleContact extends React.Component {
                                     </Row>
                                     <Row style={rowStyle} className="verticalCenter" >
                                         <Col md="2" >
-                                            <NotesIcon style={iconStyle} />
+                                            <a href="Resume Spring 2020.pdf" target="_blank" >
+                                                <NotesIcon style={iconStyle} className="link-icon" />
+                                            </a>
                                         </Col>
                                         <Col md="10" className="verticalCenter" style={descriptionStyle} >
                                             My resume!
