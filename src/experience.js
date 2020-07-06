@@ -19,8 +19,7 @@ const experiences = [
         date: "Jan 2020 - Apr 2020",
         description: `I worked on the SiteVision team, responsible for the gallery and all media (photos, videos, 360 photos, etc.) within the app. I got to build a variety of new features end-to-end, as well as improve on existing features on the iOS app! I worked with both Swift and Objective-C, as well as utilizing the architectural patterns flux and MVC (I actually wrote a work-term report comparing the two, let me know if you want to read it)!
             During my time here, I learned how to build solid, testable, and reusable components, as well as learned how to write unit tests with Quick and XCTest. I also got to work a bit on the Android app with Kotlin. It was definitely a huge learning curve, but worth it because I learned so much!
-            During hack week, I got to work on a back-end project with another intern, so I was able to deepen my understanding of how our back-end services
-            functioned and interacted with our app.
+            During hack week, I got to work on a back-end project with another intern, so I was able to deepen my understanding of how our back-end services functioned and interacted with our app.
         `,
         color: "#eccddd",
         personal: `I learned a lot here, and it was an amazing opportunity to work on and interact with so many different platforms! P.S. The office was amazing because I got to see so many office dogs.`
