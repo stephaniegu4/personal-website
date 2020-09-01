@@ -41,9 +41,8 @@ const projects = [
     {
         key: 3,
         title: 'Personal Website',
-        skills: 'ReactJS, PHP, CSS',
-        description: `This website was created using ReactJS and CSS. I wrote a PHP script to create the emailing functionality of the contact form
-        at the end of this website. I decided to try to make my own personal website in 2018 because I wanted to learn more about React.
+        skills: 'ReactJS, CSS',
+        description: `This website was created using ReactJS and CSS. I decided to try to make my own personal website in 2018 because I wanted to learn more about React.
         The first version of my website was a complete mess (the opposite of user friendly and mobile friendly), and I am constantly trying to improve it!
         I've learned a lot since then including how to make my app scalable, and taking more into consideration the user experience. I
         still have a lot to learn, so please let me know if you have any feedback for this page!`,

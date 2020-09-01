@@ -16,7 +16,7 @@ const navItems = [
     { title: "Experience", link: "experience", key: 2 }, 
     { title: "Projects", link: "projects", key: 3 },
     // { title: "Study", link: "study", key: 4 },
-    { title: "Contact", link: "contact", key: 5 },
+    { title: "Contact", link: "contactWrapper", key: 5 },
 ]
 
 class NavBar extends React.Component {
