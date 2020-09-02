@@ -55,7 +55,7 @@ class ExperienceSection extends React.Component {
         return(
             <div className="experienceSection" id="experience" >
                 <h1 className="sectionTitleText" >EXPERIENCE</h1>
-                <p className="subtitleText" >Here's an informal version of my <a href="Stephanie Gu Resume Fall 2019.pdf" target="_blank">resume</a>!</p>
+                <p className="subtitleText" >Here's an informal version of my <a href="Resume Spring 2020.pdf" target="_blank">resume</a>!</p>
                 <Container style={deckStyle} >
                     <Row>
                         {experiences.map(item => {

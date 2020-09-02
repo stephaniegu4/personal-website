@@ -6,6 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from './navbar.js';
 import Home from './home.js';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-177020817-1');
+ReactGA.pageview('');
+ReactGA.pageview('/');
 
 function debounce(value, delay) {
   let timer
