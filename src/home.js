@@ -53,7 +53,7 @@ class HeaderText extends React.Component {
                 <Container>
                     <Row>
                         <Col md={{ size: 4 }} style={{ display: 'flex', alignItems: 'right' }} >
-                            <img src={require('./images/' + icons[this.state.imgIndex])} id="headerIcon" alt="" />
+                            <img src={require('./images/' + icons[this.state.imgIndex])} id="headerIcon" alt="animoji icons" />
                         </Col>
                         <Col md="8" className="verticalCenter" style={colStyle} >
                             <Container fluid >

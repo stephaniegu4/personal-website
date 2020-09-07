@@ -86,7 +86,7 @@ class SimpleContact extends React.Component {
                     <Container>
                         <Row>
                             <Col md="4">
-                                <img src={require('./images/laptop.png')} id="contactIcon" />
+                                <img src={require('./images/laptop.png')} id="contactIcon" alt="animoji icons" />
                             </Col>
                             <Col md="8" >
                                 <Container >
