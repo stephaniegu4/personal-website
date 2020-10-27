@@ -74,7 +74,7 @@ class NavBar extends React.Component {
                                 );
                             })}
                             <NavItem style={navItemStyle} >
-                                <a href="Resume Spring 2020.pdf" target="_blank" id="navLinkResume" >
+                                <a href="Stephanie_Gu_Resume.pdf" target="_blank" id="navLinkResume" >
                                     Resume
                                 </a>
                             </NavItem>

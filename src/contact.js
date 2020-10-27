@@ -44,7 +44,7 @@ const ConnectIcons = (props) => {
                     </a>
                 </Col>
                 <Col>
-                    <a href="Resume Spring 2020.pdf" target="_blank" >
+                    <a href="Stephanie_Gu_Resume.pdf" target="_blank" >
                         <NotesIcon style={iconStyle} className="link-icon" />
                     </a>
                 </Col>
@@ -128,7 +128,7 @@ class SimpleContact extends React.Component {
                                     </Row>
                                     <Row style={rowStyle} className="verticalCenter" >
                                         <Col md="2" >
-                                            <a href="Resume Spring 2020.pdf" target="_blank" >
+                                            <a href="Stephanie_Gu_Resume.pdf" target="_blank" >
                                                 <NotesIcon style={iconStyle} className="link-icon" />
                                             </a>
                                         </Col>
