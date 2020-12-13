@@ -14,8 +14,8 @@ const icons = ['animoji.png', 'animoji2.png', 'animoji3.png'];
 const containerStyle = {
     // marginRight: '5%',
     // marginLeft: '5%',
-    paddingTop: '100px',
-    paddingBottom: '80px',
+    // paddingTop: '100px',
+    // paddingBottom: '80px',
 }
 
 class HeaderText extends React.Component {
@@ -52,11 +52,11 @@ class HeaderText extends React.Component {
             <div id="start" style={containerStyle} className="verticalCenter fullHeightStyle" >
                 <Container>
                     <Row>
-                        <Col md={{ size: 4 }} style={{ display: 'flex', alignItems: 'right' }} >
+                        <Col md={{ size: 4 }} style={{ display: 'flex', alignItems: 'right' }} className="d-none d-md-block">
                             <img src={require('./images/' + icons[this.state.imgIndex])} id="headerIcon" alt="animoji icons" />
                         </Col>
                         <Col md="8" className="verticalCenter" style={colStyle} >
-                            <Container fluid >
+                            <Container fluid>
                                 <Row>
                                     <Col>
                                         <h1 className="headerText">Hi! I'm Stephanie Gu.</h1>
