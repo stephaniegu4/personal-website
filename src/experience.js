@@ -216,6 +216,18 @@ const futureGoals = [
     },
     {
         key: 2,
+        title: 'Machine Learning',
+        colour: '#383d5c',
+        description: `
+            Machine learning is a field of software that I know little about, and that's why I would love the opportunity
+            to learn more about it! Over the summer I have been watching the free DeepMind lectures on deep learning on Youtube. While they
+            provide a good start, theory can be hard to grasp without actually putting it to use! As a person who learns most by doing, I would 
+            cherish the chance to work on a project that involves machine learning -- something I'll be trying soon myself, but hope to do
+            in an actual workplace too!
+        `
+    },
+    {
+        key: 3,
         title: "Game Dev",
         colour: '#383d5c',
         description: `
