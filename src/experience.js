@@ -31,7 +31,7 @@ const experiences = [
         location: "Toronto, ON",
         date: "Apr 2019 - Aug 2019",
         description: `I worked on the iOS side for the company flagship app. My responsibilities included mainly implementing new features, some of which were end-to-end and required designing the services needed, data structures to be used, and etc. 
-        The largest project I was able to pick up was creating a new chat messaging feature within the app. This was definitely a challenge, as no other component of the app had similar functionalities to it, and I was able to learn a lot from this project alone! Through this project, I learned about cacheing to support offline interactions, asynchrounous programming, and a lot about UIKit and how to create a chat box UI.`,
+        The largest project I was able to pick up was creating a new chat messaging feature within the app. This was definitely a challenge, as no other component of the app had similar functionalities to it, and I was able to learn a lot from this project alone! Through this project, I learned about cacheing to support offline interactions, asynchronous programming, and a lot about UIKit and how to create a chat box UI.`,
         color: "#E0EBF1",
         personal: `This was my first ever internship, and also my first time doing mobile development. I'm super grateful for the opportunities I had here that introduced me to the world of iOS!`
     }

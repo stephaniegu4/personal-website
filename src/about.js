@@ -38,7 +38,7 @@ class AboutSection extends React.Component {
                                         <p className="subtitleText" style={{ color: 'white' }}>
                                             Hey there! I'm a second year student at the University of Waterloo currently pursuing a degree in computer science. 
                                             I'm an aspiring software developer hoping to grow, excel, and make an impact wherever I go!
-                                            I'm always looking for chances to learn new things and meet new people, and <span style={{ fontFamily: 'JostBold' }} >I'm actively looking for internships in Summer 2021. </span>
+                                            I'm always looking for chances to learn new things and meet new people, and <span style={{ fontFamily: 'JostBold' }} >I'm actively looking for internships in Winter 2022. </span>
                                             <br /><br />
                                             If I'm not working or playing with the dogs, you can probably find me pursuing my dream of being an amateur baker. Ask me for my 
                                             chocolate chip cookies recipe <span role="img" aria-label="cowboy emoji">🤠</span>.

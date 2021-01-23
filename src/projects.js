@@ -81,7 +81,7 @@ class ProjectSection extends React.Component {
                     <Row>
                         <p className="subtitleText" style={{ color: 'white' }}>
                             These are some of the projects I've worked on in the past! Click on the title to go their respective github repos.
-                            Unfortuantely, some of these were projects for a school course (titles in black), so I cannot provide the github link for them, but feel free to reach out
+                            Unfortunately, some of these were projects for a school course (titles in black), so I cannot provide the github link for them, but feel free to reach out
                             if you have any specific questions!
                         </p>
                     </Row>
